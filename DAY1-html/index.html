@@ -64,11 +64,59 @@
     </ul>
     <!--img태그 : 이미지를 등록 비어있는태그, 
                  /써주길 권장(리액트에선 무조건 있어야함)-->
-    <img src="https://ssl.pstatic.net/melona/libs/1474/1474337/22c59f513bc0e8812ab0_20231226163044058.jpg" alt="광고 이미지" />
+    <img src="https://s.pstatic.net/shopping.phinf/20231205_6/5055a23e-edb4-4795-8368-96ca646c7eb7.jpg?type=f294_378" alt="광고 이미지" />
 
-    <!--a태그 : 페이지를 이동-->
+    <!--a태그 : 페이지를 이동
+               inline 태그(block이 없는 태그)
+    inline태그 : block과 반대로 영역이 없음  -->
     <div>
-     <a href="http://www.naver.com" target="_blank">이동</a>
+        <a href="http://www.naver.com" target="_blank">이동</a>
+        <a href="http://www.naver.com" target="_blank">이동</a>
+        <a href="http://www.naver.com" target="_blank">이동</a>
     </div>
+    <!--
+        inline태그들은 div안에 넣음
+        span태그는 어떤 특정한 영역을 바꾸기 위해 중간에 style을 넣어야 할 때 사용
+    -->
+    <div>
+        <span style="color: red;">안녕하세요.</span><span>반갑습니다.</span>
+    </div>
+    <hr />
+    <!--form태그 : input태그를 담는 역할, 서버로 input의 데이터(value)를 전송시키는 역할-->
+    <>
+        <!-- input button/ button 모두 inline요소
+            어떤 기능 역할만 할 때는 input button
+            button은 summit이 되는 버튼
+            button type = "button" 하면 가만히 있음(기능역할만 함) 제출기능X
+        -->
+        <input type="button" value="기능역할" /><br />
+        <button type=>제출 버튼</button><br /> <!--summit-->
+        <button type="button">기능을 위한 버튼</button><br /> <!--그냥 기능-->
+        <input type ="text" placeholder="이름" value="hi" /><br /> <!--value속성 : 실제 값을 기본으로 넣음-->
+        <input type="password" placeholder="비밀번호" /><br /> <!--placeholder속성 : 사용자에게 안내 해주는 역할-->
+        <input type="checkbox" name="food" value="pizza" />피자<br /> <!--value는 서버로 보내지는값--> 
+        <input type="checkbox" name="food" value="chicken"checked />치킨<br />
+        <input type="radio" name="hobby" value="camping" />캠핑<br /><!--on/off가 안됨 무조건 하나 선택해야함-->
+        <input type="radio" name="hobby" value="hiking" />등산<br /><!--선택안해도 되면 checkbox사용-->
+        <input type="radio" name="hobby" value="swimming" />수영<br />
+        <input type="date" /><br />
+        <input type="time" /><br />
+        <input type="datetime-local" /><br />
+        <!--select는 option태그와 함께씀-->
+        <select>
+            <optgroup label="Asia">
+                <option value="korea">대한민국</option>
+                <option value="japen">일본</option>
+                <option value="china">중국</option>
+                <option value="taipai">대만</option>
+            </optgroup>
+            <optgroup label="America">
+                <option>미국</option>
+                <option>캐나다</option>
+            </optgroup>
+            
+        </select>
+
+    </form>
 </body>
 </html>
