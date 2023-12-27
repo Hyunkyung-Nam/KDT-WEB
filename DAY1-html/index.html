@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko"><!--한국어사이트 -->
+<head>
+    <meta charset="UTF-8"><!--국제표준언어팩 UTF-8사용-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--모바일환경에 맞게 나오기 위해 사용하는 것/반응형 웹 할 때 사용-->
+    <title>KDT 11기</title>
+    <!--탭에 표시되는 것-->
+</head>
+<body>
+    <!--div태그 : division의 약자, block 태그로써 한 줄의 영역을 차지-->
+    <div>Hello World!!!</div>
+    <div>안녕하세요</div>
+    <!--head태그 : 제목태그, block 태그-->
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 2</h3>
+    <h4>Heading 2</h4>
+    <h5>Heading 2</h5>
+    <h6>Heading 2</h6>
+    <!--p태그 : 문장을 담는 태그, block 태그-->
+    <!--br태그 : 줄바꿈 태그-->
+    <p>안녕하세요<br /> 저는 남현경입니다.</p>
+    <!--hr태그 : 한줄 그어줌-->
+    <hr>
+    <!--ul태그 : unordered list태그
+    ul 태그 속성(attribute) : 마커모양
+                            none/square/circle
+                             disc가 기본타입 안써도됨-->
+    <!--li태그 : ul태그나 ol태그 안에 list를 작성-->
+    <ul type="square">
+        <li>사과</li>
+        <li>바나나</li>
+        <li>파인애플</li>
+    </ul>
+    <!--ol태그 : oredred list태그
+    ol 태그 속성: 순번모양
+         - type : 1, A, a, I, i 등
+         - start : 시작번호       
+         - reversed : 역순 -->
+    <ol type="1" start = "10" reversed>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+
+    <!--문자 꾸미기 태그는 b정도만 사용하고 나머지는 css에서 주로 변경-->
+    <ul type="square">
+        <li>
+            <ol>
+                <li><b>일</b></li>
+                <li><strong>이</strong></li>
+                <li><i>삼</i></li>
+            </ol>
+        </li>
+        <br />
+        <li>
+            <ol>
+                <li><em>일</em></li>
+                <li><del>이</del></li>
+                <li><u>삼</u></li>
+            </ol>
+        </li>
+    </ul>
+    <!--img태그 : 이미지를 등록 비어있는태그, 
+                 /써주길 권장(리액트에선 무조건 있어야함)-->
+    <img src="https://ssl.pstatic.net/melona/libs/1474/1474337/22c59f513bc0e8812ab0_20231226163044058.jpg" alt="광고 이미지" />
+
+    <!--a태그 : 페이지를 이동-->
+    <div>
+     <a href="http://www.naver.com" target="_blank">이동</a>
+    </div>
+</body>
+</html>
