@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>설문조사</h3>
+    <!--label태그 : input에 라벨을 달아주는 태그-->
+    <!--id는 해당 html에서 하나만 쓸 수 있음/ label누르면 해당 id에 포커스 맞춰짐-->
+    <label for="name">이름</label>
+    <input type="text" placeholder="이름" id="name" /><br />
+    <label for="email">이메일</label>
+    <input type="email" placeholder="abc@gmail.com" id="email" />
+
+    <h4>나이</h4>
+    <!--input*6 + tab/-->
+    <input type="radio" name="age" id="10s" />
+    <label for="10s">10대</label>
+    <input type="radio" name="age" id="20s" />
+    <label for="20s">20대</label>
+    <input type="radio" name="age" id="30s" />
+    <label for="30s">30대</label>
+    <input type="radio" name="age" id="40s" />
+    <label for="40s">40대</label>
+    <input type="radio" name="age" id="50s" />
+    <label for="50s">50대</label>
+    <input type="radio" name="age" id="over-60s" />
+    <label for="over-60s">60대 이상</label> 
+
+    <h4>원하는 강의(복수 응답 가능합니다.)</h4>
+    <input type="checkbox" nmae="class" id="html"/>
+    <label for="html">html</label>
+    <input type="checkbox" nmae="class" id="javascript"/>
+    <label for="javascript">javascript</label>
+    <input type="checkbox" nmae="class" id="css"/>
+    <label for="css">css</label><br /><br />
+
+    <textarea rows="10" cols="50" placeholder="하고 싶은 말을 써주세요 :)"></textarea>
+
+</body>
+</html>
