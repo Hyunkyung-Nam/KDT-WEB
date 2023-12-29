@@ -1,0 +1,24 @@
+
+p.lion {
+background-color: red;
+}
+/* li#tiger 도 가능  */
+.zoo #tiger {
+    background-color: yellow;
+}
+ul > .lion {
+    background-color: greenyellow;
+}
+.lion{
+    color: sienna;
+}
+.zoo .lion{
+    /* 폰트를 두껍게 -> font-weight : bold */
+    font-weight: bold;
+}
+#tiger + li {
+    background-color: skyblue;
+}
+li.lion ~ li {
+    background-color: orange;
+}
