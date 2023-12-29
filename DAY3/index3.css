@@ -1,0 +1,9 @@
+.naver_link:hover{
+    color: red;
+}
+.naver_link:active{
+    background-color: black;
+}
+.focus:focus{
+    background-color: orange;
+}
