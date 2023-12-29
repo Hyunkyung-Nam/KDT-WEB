@@ -1,22 +1,30 @@
+/* 일치선택자 */
 p.lion {
     background-color: red;
 }
+/* 클래스선택자 */
 .lion {
     color: sienna;
 }
+/* 자식선택자 */
 ul > .lion{
     background-color: greenyellow;
 }
+/* 하위후손선택자 */
 .zoo .lion{
     font-weight: bold;
 }
+/* id선택자 */
 #tiger {
     background-color: yellow;
 }
-
+/* 인전형제선택자 */
 #tiger + li {
     background-color: skyblue;
 }
-.zoo .lion +li ~ li {
+/* 일반형제선택자  */
+li.lion ~ li{
     background-color: orange;
 }
+
+
