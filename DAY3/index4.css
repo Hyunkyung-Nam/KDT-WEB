@@ -1,0 +1,19 @@
+.fruits span:first-child {
+    color: red;
+}
+/* div가 첫째 자식이 아니기 때문에 애초에 틀린코드임. 
+.fruits div:first-child{
+    color: orange;
+}
+
+*/
+.fruits h3:last-child{
+    color: orange;
+}
+/* nth-child가 우선순위 최하위 이다.  */
+.fruits *:nth-child(3){
+    color: green;
+}
+.fruits *:not(span){
+    color: aqua;
+}
