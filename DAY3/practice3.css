@@ -1,5 +1,11 @@
 h1:hover {
     color: red;
+    /* cursor : 마우스 모양을 바꿀 때 사용 
+    cursor: pointer 손가락 모양
+    cursor : grab : 손바닥
+    cursor : crosshair
+    */
+    cursor: grabbing;
 }
 a:active {
     background-color: blue;
