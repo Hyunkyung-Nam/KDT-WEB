@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <!--전체선택자 * 
+        태그선택자 해당태그
+        클래스선택자 .
+        id선택자 #
+    부모한테주면 자식들도 모두 속성을 가지고 있다
+    -->
+    <!-- 블럭잡고서 conrol + / 하면 주석 달림-->
+    <style>
+        /* 전체선택자 */
+        * {
+            color: red;
+        }
+        /* 태그선택자 */
+        li {
+            color: green;
+        }
+        /* 클래스선택자 */
+        .orange {
+            color: orange;
+        }
+        .bgColor {
+            background-color:sienna;
+        }
+        /* id선택자 */
+        #orange {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>딸기</li>
+            <li id="orange" class="orange">오렌지</li>
+        </ul>
+        <div>당근</div>
+        <p>토마토</p>
+        <!-- 클래스 한칸 띈 다음에 여러개 쓸 수 있다. -->
+        <span class="orange bgColor">오렌지</span>
+    </div>
+</body>
+</html>

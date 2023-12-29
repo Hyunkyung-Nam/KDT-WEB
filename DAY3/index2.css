@@ -1,0 +1,29 @@
+/* class선택자
+.orange {
+    color : red;
+} 
+*/
+/* 일치선택자 
+li.orange {
+    color: red;
+} 
+*/
+ /* 자식선택자
+ul > .orange {
+    color: red;
+} 
+*/
+/* 하위후손선택자*/
+div .orange {
+    color: orange;
+}
+/*형제선택자*/
+.orange + li {
+    color: greenyellow;
+}
+.orange ~ li {
+    color: brown;
+}
+.main .apple {
+    color: red;
+}
