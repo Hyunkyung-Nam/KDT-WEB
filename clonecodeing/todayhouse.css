@@ -1,0 +1,152 @@
+* {
+    text-decoration: none;
+}
+header {
+    margin: 10px 20px;
+}
+.home {
+    display: inline-block;
+    border: none;
+    background: none;
+    font: inherit;
+    position: relative;
+    display: inline-block;
+    line-height: 1;
+    font-weight: bold;
+    outline: none;
+    font-size: 30px; 
+    text-align: center;
+}
+header [type="text"]{
+    margin-left: calc(10vw);
+}
+.community {
+    display: inline-block;
+
+    border: none;
+    background: none;
+    font: inherit;
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    padding: 21px 5px 15px;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
+    outline: none;
+    color: #35C5F0;
+}
+.header_nav {
+    display: inline-block;
+    border: none;
+    background: none;
+    font: inherit;
+    position: relative;
+    display: inline-block;
+    margin: 0 px;
+    padding: 21px 5px 15px;
+    font-size: 18px;
+    line-height: 1;
+    font-weight: bold;
+    outline: none;
+    color: black;
+}
+.header_nav:hover {
+    color : #35C5F0;
+}
+.search_input:hover {
+    background-color: rgb(233, 232, 232);
+}
+.cart_img {
+    display: inline-block;
+    font: inherit;
+    position: relative;
+    display: inline-block;
+    padding: 30px 0px 0px 0px;
+    outline: none;
+    width:30px;
+}
+.login_signup {
+    color: gray;
+    padding: 21px 5px 15px;
+}
+nav {
+    margin: 10px 20px;
+}
+.nav_menu {
+    align-items: center;
+    display: inline-block;
+    border: none;
+    background: none;
+    font: inherit;
+    position: relative;
+    display: inline-block;
+    font-size:calc(1.5vw);
+    line-height: 1;
+    font-weight: bold;
+    outline: none;
+    color: black;
+}
+.nav_menu:hover {
+    color : #35C5F0;
+}
+.nav_home {
+    color : #35C5F0;
+}
+.nav_menu{
+    width: wrap;
+    margin:0px calc(0.2vw) 20px calc(0.2vw)  ;
+}
+.main{
+    margin: 10px 20px;
+    width: 100%;
+    /* margin: 10px auto; */
+}
+.main * {
+    display: inline-block;
+}
+.main > div {
+    height: calc(3);
+}
+.section{
+    width: calc(70vw);
+}
+.section > a > img {
+    width:100%;
+}
+.aside {
+    width:22.5%;
+}
+.aside > a > img {
+    width: 100%;
+}
+.botton_section {
+    margin-bottom: 30px;
+    display: block;
+    width: 100%;
+}
+.botton_section > *{
+    width:9%;
+}
+.botton_section > * > * {
+    display: inline-block;
+    width : 100%; 
+    text-align: center;
+    color: black;
+}
+.wanted_photo a { 
+    color: black;
+    font-size: 20px;
+    
+}
+.wanted_photo p{
+    font-size: 15px;
+    font-weight: 400;
+}
+.wanted_photo button {
+    float: right;
+}
+.botton_section img {
+    width : 100%; 
+    height :100%;
+}
