@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* content 앞에 쓸 때는 before입니다 
+        슬라이더가 있고 좌우 버튼을 넣을 때 사용*/
+        .box::before {
+            content: "앞에!";
+            display: inline-block;
+            width: 35px;
+        }
+        /* content 뒤에 쓸 때는 after
+        colon 2개 쓴다
+        */
+        .box::after{
+            content: "뒤에!";
+        }
+    </style>
+</head>
+<body>
+    <!-- 가상요소 선택자 -->
+    <div class="box">
+        안녕하세요 
+    </div>
+</body>
+</html>
