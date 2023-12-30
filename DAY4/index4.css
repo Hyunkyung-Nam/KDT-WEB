@@ -1,0 +1,10 @@
+div {
+    /* display는 layout을 꾸밀 때 사용
+       요소들을 화면에 어떻게 보여줄지 나타내는 것
+       여기에 쓰는 순간 기본값을 무시하게 됨  */
+    display: inline-block;
+    border: solid 2px #ff0000;
+}
+/* border : 테두리 선을 그리는 속성 */
+/* padding : 요소의 내부 여백을 지정 */
+/* margin : 요소의 외부 여백을 저장 */

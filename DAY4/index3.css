@@ -1,5 +1,6 @@
 /* 폰트는 전체선택자에 넣는게 좋음 
-    눈누폰트는 웹폰트 가져오기 방식으로 사용 */
+    눈누폰트는 웹폰트 가져오기 방식으로 사용
+    구글폰트는 link방식으로 폰트 가져옴*/
 @font-face {
     font-family: 'SejonghospitalBold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2312-1@1.1/SejonghospitalBold.woff2') format('woff2');
@@ -21,4 +22,9 @@
     line-height: 2;
     font-family: 'SejonghospitalBold';
     
+}
+/* 정렬, 장식은 font로 시작하지 않고 text로 시작. */
+.content3 {
+    text-align: center;
+    text-decoration: underline;
 }
