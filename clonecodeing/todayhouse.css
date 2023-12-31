@@ -1,9 +1,15 @@
+/* 모든요소 마진/패딩 제거 */
 * {
     text-decoration: none;
+    margin: 0px;
+    padding: 0px;
 }
+
 header {
     margin: 10px 20px;
 }
+
+/* header 중 홈*/
 .home {
     display: inline-block;
     border: none;
@@ -17,9 +23,7 @@ header {
     font-size: 30px; 
     text-align: center;
 }
-header [type="text"]{
-    margin-left: calc(10vw);
-}
+/* header 중 커뮤니티 */
 .community {
     display: inline-block;
 
@@ -36,6 +40,7 @@ header [type="text"]{
     outline: none;
     color: #35C5F0;
 }
+/* header 네비게이션 전체 설정 */
 .header_nav {
     display: inline-block;
     border: none;
@@ -51,12 +56,19 @@ header [type="text"]{
     outline: none;
     color: black;
 }
+/* 검색창 마진 */
+header [type="search_input"]{
+    margin-left: calc(10vw);
+}
+/* header 네이게이션에 마우스 올려놓았을 때 색상 변경 */
 .header_nav:hover {
     color : #35C5F0;
 }
+/* header 통합검색창 선택되면 색상변경 */
 .search_input:hover {
     background-color: rgb(233, 232, 232);
 }
+/* header 장바구니 이미지 설정 */
 .cart_img {
     display: inline-block;
     font: inherit;
@@ -66,13 +78,16 @@ header [type="text"]{
     outline: none;
     width:30px;
 }
+/* header 로그인/회원가입/고객센터 설정 */
 .login_signup {
     color: gray;
     padding: 21px 5px 15px;
 }
+/* header아래 네비게이션 영역 */
 nav {
     margin: 10px 20px;
 }
+/* 네비게이션 전체메뉴 설정 */
 .nav_menu {
     align-items: center;
     display: inline-block;
@@ -87,6 +102,7 @@ nav {
     outline: none;
     color: black;
 }
+/* 네비게이션에 마우스 올려 놓을 때 설정 */
 .nav_menu:hover {
     color : #35C5F0;
 }
@@ -97,26 +113,31 @@ nav {
     width: wrap;
     margin:0px calc(0.2vw) 20px calc(0.2vw)  ;
 }
+/* 메인 섹션 */
 .main{
     margin: 10px 20px;
     width: 100%;
     /* margin: 10px auto; */
 }
+/* 메인 내 태그들 모두 inline-block으로 사용 */
 .main * {
     display: inline-block;
 }
-.main > div {
-    height: calc(3);
-}
+/* 메인 좌측 표시되는 섹션, 전체뷰의 70% 영역지정 */
 .section{
     width: calc(70vw);
 }
+/* 섹션안의 a태그 이미지 섹션과 크기 동일하게 맞춤 
+해당 설정이 없으면 이미지 기본크기로 설정됨 */
 .section > a > img {
     width:100%;
 }
+/* 메인의 우측 표시되는 섹션, 전체뷰의 22.5% 지정 */
 .aside {
     width:22.5%;
 }
+/* 섹션안의 a태그 이미지 섹션과 크기 동일하게 맞춤 
+해당 설정이 없으면 이미지 기본크기로 설정됨 */
 .aside > a > img {
     width: 100%;
 }
@@ -125,6 +146,7 @@ nav {
     display: block;
     width: 100%;
 }
+/* 10가지 요소 각각 전체뷰의 9%로 화면에 표시 */
 .botton_section > *{
     width:9%;
 }
@@ -134,19 +156,92 @@ nav {
     text-align: center;
     color: black;
 }
+/* 영역 지정 */
+.wanted_photo{
+    width: calc(100vw);
+}
 .wanted_photo a { 
     color: black;
     font-size: 20px;
-    
 }
 .wanted_photo p{
     font-size: 15px;
     font-weight: 400;
 }
+/* 버튼이 창 우측에 표시되게 설정 */
 .wanted_photo button {
     float: right;
+    margin-right: calc(10vw);
+}
+.wanted_photo a img {
+    width: calc(20vw);
 }
 .botton_section img {
     width : 100%; 
-    height :100%;
+}
+/* 화면 하단 footer설정 */
+.footer{
+    background-color: rgb(240, 237, 237); 
+}
+/* 3가지 영역 inline-block으로 나란히 정렬 */
+.footer *{
+    display: inline-block;
+}
+/* footer영역 중 첫번째 화면 */
+.footer .cs_info{
+    margin: 10px 10px;
+    background-color: rgb(240, 237, 237); 
+    width: 20%;
+}
+.footer .cs_info .cs_link {
+    font-size: 20px;
+    color: black;
+}
+.footer .cs_info .tel {
+    font-size: 17px;
+    color: black;
+}
+.footer .cs_info span {
+    margin-left: 10px;
+}
+.footer .cs_info ul {
+    font-size: 13px;
+    color: grey;
+}
+.footer .cs_info .cs_kakaotalk {
+    color: rgb(107, 106, 106);
+    border-style: solid;
+    border-color: lightgrey;
+}
+.footer .cs_info .cs_email {
+    color: rgb(107, 106, 106);
+    border-style: solid;
+    border-color: lightgrey;
+}
+
+.footer .information_nav {
+    width: 30%;
+    background-color: rgb(240, 237, 237);
+}
+.footer .information_nav * {
+    display: inline-block;
+    color: black;
+    margin-bottom: 15%;
+}
+.information_nav_left {
+    margin-left: 5%;
+    width: 40%;
+    display: inline-block;
+}
+.information_nav_rigtht {
+    margin-right: 5px;
+    width: 40%;
+    display: inline-block;
+}
+.company_info {
+    width: 40%;
+}
+.company_info p {
+    color: darkgrey; 
+    font-size: 13px;
 }
