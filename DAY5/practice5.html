@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습. 설문조가 폼 꾸미기</title>
+    <link rel="stylesheet" href="practice5.css">
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <h3>설문조사</h3>
+        </div>
+        <div class="info">
+            <div>
+                이름
+                <input type="text" class="name">
+            </div>
+            <div >
+                이메일
+                <input type="text" class="email" placeholder="love@example.com">
+            </div>
+        </div>
+        <div class="age">
+            <!-- 10대, 20대, 30대 등 텍스트 눌렀을 때 radio 버튼 눌리게 만드는 기능 추가 -->
+            <input type="radio" name = "age" id="10s" checked/>
+            <label for="10s">10대</label>
+            <input type="radio" name = "age" id="20s"/>
+            <label for="20s">20대</label>
+            <input type="radio" name = "age" id="30s"/>
+            <label for="30s">30대</label>
+            <input type="radio" name = "age" id="40s"/>
+            <label for="40s">40대</label>
+            <input type="radio" name = "age" id="50s"/>
+            <label for="50s">50대</label>
+            <input type="radio" name = "age" id="over_60s"/>
+            <label for="over_60s">60대 이상</label>
+        </div>
+        <div class="wantedLecture">
+            <input type="checkbox" name="lecture" id="html" checked/>
+            <label for="html">html</label>
+            <input type="checkbox" name="lecture" id="javascript" />
+            <label for="javascript">javascript</label>
+            <input type="checkbox" name="lecture" id="css" />
+            <label for="css">css</label>
+        </div>
+        <div class="wantedText">
+            <textarea name="wantedText"cols="100" rows="10" placeholder="하고 싶은 말을 써주세요 :)"></textarea>
+            <button>제출</button>
+        </div>
+    </div>
+    
+
+</body>
+</html>

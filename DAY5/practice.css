@@ -1,0 +1,20 @@
+
+.section {
+    width: 100vw;
+    height: 30vw;
+    background-color: antiquewhite;
+}
+.square {
+    width: 10vw;
+    height: 10vw;
+    background-color: blue;
+    text-align: center;
+    color: white;
+    display: inline-block;
+    margin: calc(15vw - 5vw) calc(50% - 5vw);
+}
+.square > div{
+    width: 80%;
+    height: 20%;
+    padding: 40% 10%;
+}

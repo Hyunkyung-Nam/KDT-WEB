@@ -1,0 +1,30 @@
+.parent {
+    background-color:bisque;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+.box1 {
+    background-color: yellowgreen;
+    width: 100px;
+    height: 80px;
+    /* fixed는  */
+    position: fixed;
+}
+.box2 {
+    background-color: tomato;
+    width: 150px;
+    height: 100px;
+    position: relative;
+    /* position:relative없이 top 30px left 30px 주면 아무런 변화없음 */
+    top : 30px;
+    left: 30px;
+}
+.box3 {
+    background-color: violet;
+    width: 100px;
+    height: 150px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}

@@ -1,0 +1,15 @@
+.bgColor {
+    /* background-color:bisque;
+    max-width: 500px;
+    max-height: 500px;
+    min-width: 300px;
+    min-height: 300px; */
+    /* height는 500px로 고정
+    max는 최대 얼마. 처음부터 500px로 고정이 되는게 아니라 해당 컨텐츠만큼 담겨있음 */
+    background-color:bisque;
+    min-height: calc(1920x-50vw);
+    /* calc도 반응형에서 많이 사용됨 둘이 단위가 다를때 사용함  */
+}
+p {
+    line-height: 40px;
+}

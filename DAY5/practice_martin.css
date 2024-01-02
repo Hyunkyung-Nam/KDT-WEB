@@ -1,0 +1,17 @@
+body {
+    margin: 0px;
+    background-color: antiquewhite;
+}
+.kdt {
+    background-color: blue;
+    color: white;
+    width: 10vw;
+    height: 10vw;
+    /* magin: auto하면 가운데 온다 */
+    margin: auto;
+    /* 계산 수식할 때 띄어쓰기 해야한다 */
+    margin-top: calc(50vh - (100vw/20));
+    text-align: center;
+    /* line-height를 div블럭의 크기와 동일하게 하면 된다 */
+    line-height: 10vw;
+}

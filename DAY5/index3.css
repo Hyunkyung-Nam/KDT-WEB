@@ -1,0 +1,20 @@
+div {
+    width: 100px;
+    height: 100px;
+    padding:  20px;
+    border: 20px;
+    border-style: solid;
+    border-color: red;
+    background-color: orange;
+}
+/* 얜.. 막만들기 좋다.. ㅋㅋㅋ 빨리 만들기 좋음 */
+.contentBox {
+    /* content width와 heigth가 100px */
+    box-sizing: content-box;
+}
+
+/* borderBox가 규격화 하기 좋다 */
+.borderBox {
+    /* content, margin, padding 모두 합쳐 100px */
+    box-sizing: border-box;
+}

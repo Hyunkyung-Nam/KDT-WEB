@@ -1,0 +1,22 @@
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: yellow;
+    /* border 단축속성 
+    border: 2px solid #fff000;
+    */
+    line-height: 300px;
+    text-align: center;
+    border-style: solid;
+    /*상하좌우 모두 3px
+    border-width: 3px;*/
+    /*상 좌우 하*/
+    border-width: 5px 10px 15px;
+    border-color: black;
+    /* 원만들기 전부 50%쓰면된다 */
+    /* 위, 왼쪽하려면 top-left 쓰면된다 */
+    border-top-left-radius: 50%;  
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+}

@@ -1,0 +1,41 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+* {
+    background-color: antiquewhite;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.content {
+    position: absolute;
+    margin : 20px 20px;
+}
+
+.header {
+    margin-bottom: 10px ;
+}
+
+.info {
+    margin-bottom: 10px;
+}
+.info > * {
+    margin-bottom: 10px;
+}
+.name:focus {
+    background-color: white;
+}
+.email:focus {
+    background-color: white;
+}
+.age {
+    margin-bottom: 10px;
+}
+.wantedLecture {
+    margin-bottom: 10px;
+}
+.wantedText:focus {
+    background-color: white;
+}

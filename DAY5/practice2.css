@@ -1,0 +1,9 @@
+.border {
+    width: 50vw;
+    height: 50vh;
+    border-width: 20px 30px 40px 10px;
+    border-style: dashed dotted double ridge;
+    border-color: red orange yellow green;
+    text-align: center;
+    line-height: 50vh;
+}
