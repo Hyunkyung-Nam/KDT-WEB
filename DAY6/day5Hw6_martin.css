@@ -1,0 +1,33 @@
+.parent {
+    width: 500px;
+    height: 500px;
+    background-color: blue;
+    position: relative;
+}
+
+.box1 {
+    width: 100px;
+    height: 50px;
+    background-color: bisque;
+    left: 50px;
+    top: 30px;
+    position: relative;
+    /* 자기자신기준이 relative */
+}
+
+.box2 {
+    width: 100px;
+    height: 100px;
+    background-color: crimson;
+    right: 30px;
+    bottom: 100px;
+    position: absolute;
+}
+
+.box3 {
+    width: 200px;
+    height: 300px;
+    background-color: darkviolet;
+    top: 100px;
+    position: fixed; 
+}

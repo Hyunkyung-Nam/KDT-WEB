@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    width: 500px;
+    height: 500px;
+}
+
+.container1 {
+    flex-direction: row;
+}
+.container2 {
+    flex-direction: row-reverse;
+}
+.container3 {
+    flex-direction: column;
+}
+.item {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+}

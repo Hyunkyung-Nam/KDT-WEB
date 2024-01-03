@@ -1,0 +1,25 @@
+.main {
+    background-color: blue;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+.box {
+    background-color: orange;
+    color: white;
+    width: 100px;
+    height: 100px;
+    border:solid;
+    line-height: 100px;
+    text-align: center;
+}
+
+/* flex-direction : x축과 y축의 시작축을 지정
+    flex-wrap : 줄바꿈 설정
+    justify-content : x축의 정렬을 설정한다 (flex-direction과 다른거니 헷갈리지말기)
+    align-items : y축의 정렬을 설정한다 (단 한줄일 때 사용)
+    align-content : y축의 정렬을 설정한다 ( 단. 여러줄일 . 때사용 flex-wrap과 함께 써줘야한다.        
+*/

@@ -1,0 +1,48 @@
+.div1 {
+    background-color: orange;
+    background-image: url("lion.png");
+    width: 500px;
+    height: 500px;
+    display: inline-block;
+}
+.div2 {
+    background-color: orange;
+    background-image: url("lion.png");
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: inline-block;
+}
+.div3 {
+    background-color: orange;
+    background-image: url("lion.png");
+    width: 500px;
+    height: 500px;
+    background-repeat: repeat-x;
+    background-position: center;
+    display: inline-block;
+    background-attachment: fixed;
+    overflow: scroll;
+    /* 해당div에 스크롤에 따라 배경이 움직이는게 아니라 전체 화면 스크롤에 따라서 달라진다  */
+}
+.div4 {
+    background-color: orange;
+    background-image: url("lion.png");
+    width: 500px;
+    height: 500px;
+    background-repeat: repeat-y;
+    display: inline-block;
+    background-position: center;
+    background-size: contain;
+}
+
+.firework {
+    background-color: orange;
+    background-image: url(fireworks.jpg);
+    width: 100vw;
+    height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
