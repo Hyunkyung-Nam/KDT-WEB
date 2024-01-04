@@ -1,0 +1,44 @@
+.box {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+.box1 {
+    background-color: greenyellow;
+}
+.box1:hover {
+    width: 400px;
+    background-color: blue;
+    opacity: 0.5;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 1s;
+}
+.box2 {
+    background-color: green;
+}
+.box2:hover {
+    transform: rotate(180deg);
+    background-color: gray;
+    transition: all 1s ease-in-out;
+}
+.box3 {
+    background-color: aquamarine;
+}
+.box3:hover {
+    transform: scale(3) translate(100px, 100px);
+    transition: all 3s ease-in-out;
+}
+
+.box4 {
+    background-color: deepskyblue;
+}
+
+.box4:hover {
+    transform: translate(-5px, -15px);
+    /* box-shadow :  영역에 그림자 효과 
+    x축 위치 , y축 위치, 그림자 정도*/
+    box-shadow: 4px 4px 10px #000800;
+    transition: all 0.2s ease-in;
+}

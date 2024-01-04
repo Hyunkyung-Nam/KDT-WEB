@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header1 {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(205, 205, 205);
+    align-items: center;
+    /* 왜 나는 이거로 안되었을까 고민해보기! lineheight빼게.. */
+    height: 50px;
+    padding : 0px 10px;
+    font-weight: bold;
+}
+.headerLogo{
+
+}
+.header1Menu {
+    display: flex;
+}
+.header1Menu *:nth-child(2) {
+    margin: 0 10px;
+}
+
+.header4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding : 0px 10px;
+    font-weight: bold;
+    background-color: rgb(205, 205, 205);
+}
+.header4Menu {
+    display: flex;
+}
+.header4Menu *:nth-child(2n) {
+    margin: 0 10px;
+}
+.header4Login {
+    display: flex;
+}
+.header4Login *:first-child {
+    margin: 0 10px;
+}
