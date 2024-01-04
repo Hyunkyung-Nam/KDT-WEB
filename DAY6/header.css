@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.header{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.header *{
+    height: 50px;
+    background-color: rgb(213, 208, 208);
+}
+.top {
+    padding-left: 10px ;
+    padding-right: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-weight: bolder;
+}
+.first {
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.firstLogo {
+    width: fit-content;
+    justify-self: start;
+    align-items: center;
+    font-weight: bolder;
+    line-height: 50px;
+}
+.firstMenu{
+    display: flex;
+    width: fit-content;
+    font-weight: bolder;
+    align-items: center;
+    line-height: 50px;
+}
+.firstMenu *{
+    padding-left: 10px ;
+    padding-right: 10px;
+}
+.second{
+    padding-left: 10px ;
+    padding-right: 10px;
+    display: flex;
+    font-weight: bolder;
+    justify-content: space-between;
+    align-items: center;
+}
+.second_menu{
+    line-height: 50px;
+}
+.third {
+    padding-left: 10px ;
+    padding-right: 10px;
+    display: flex;
+    justify-content:space-between;
+    font-weight:bolder;
+    line-height: 50px;
+}
+.third_menu {
+    display: flex;
+}
+.third_menu * {
+    padding-left: 10px ;
+    padding-right: 10px;
+}
+.fourth{
+    padding-left: 10px ;
+    padding-right: 10px;
+    background-color: pink;
+    color: white;
+    height: 20px;
+    line-height: 20px;
+    display: flex;
+    justify-content: center;
+}
+.fourth * {
+    background-color: pink;
+    height: 20px;
+}
+
+.fifth {
+    padding-left: 10px ;
+    padding-right: 10px;
+    display: flex;
+    line-height: 50px;
+    font-weight:bolder;
+    justify-content: space-between;
+}
+.fifth *{
+    display: flex;
+}
+.fifth_menu * {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.fifth_login {
+    padding-left: 10px ;
+    padding-right: 10px;
+}
+.fifth_logo {
+    padding-right: 10px;
+}
+.fifth_signup {
+    padding-left: 10px;
+}

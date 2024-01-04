@@ -18,23 +18,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 60px;
+    padding: 10px 70px;
     height: 100px;
     box-sizing: border-box;
+    /* 얘 상단에 고정시키려면 fixed해야하는데 그러면 레이아웃 다 망가짐.. ㅇㅂㅇ.. 어케할지 고민해봐야겠음 */
 }
-.header div:nth-child(1) {flex-grow: 1; }
-.header div:nth-child(2) {flex-grow: 3; }
-.header div:nth-child(3) {flex-grow: 3; }
-.header div:nth-child(4) {flex-grow: 3; }
-.header div:nth-child(5) {flex-grow: 1; }
+.headerSelf{flex-grow: 1; }
+.headerNav{flex-grow: 2; }
+.headerCart{flex-grow: 1; }
+.headerSearch{flex-grow: 4; }
+.headerSignUp{flex-grow: 2; }
 
-.headerSelf{
+
+.headerSelf *{
     font-size: 25px;
     font-weight: bold;
     color: black;
 }
 .headerNav {
     display: flex;
+}
+.headerNav *:first-child{
+    margin-left: 20px;
 }
 .headerNav * {
     margin: 0 7px ;
@@ -60,21 +65,244 @@
 }
 .totalSearch{
     display: flex;
+    position: relative;
     align-items: center;
-    border: rgb(197, 193, 193);
-    border-style: solid;
-    height: 30px;
-    border-radius: 5px;
+}
+.totalSearchText:hover{
+    background-color: rgb(228, 225, 225);
+}
+.totalSearchText:focus {
+    border-color: #35C5F0;
+    
 }
 .readingGlasses {
     margin-left: 10px;
-    width: 17px;
-    height: 17px;
+    width: 30px;
+    height: 25px;
     margin-right: 3px;
 }
 .totalSearchText{
-    border: 0;
+    position: absolute;
+    outline: none;
+    width: Calc(100% - 35px);
+    background-color:unset;
+    border: rgb(197, 193, 193);
+    border-style:solid;
+    height: 30px;
+    border-radius: 5px;
+    padding-left: 35px;
+    z-index: 2;
+}
+.totalSearch::before {
+    content:"";
+    position: absolute;
+    background-image: url("readingGlasses.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    left:10px;
+    z-index: 3;
+}
+.cart {
+    font-size: 24px;
+    line-height: 1;
+}
+.cart::before {
+    content:"";
+    position: relative;
+    display: inline-block;
+    background-image: url("shoppingBasket.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    z-index: 3;
 }
 .headerSignUp{
     display: flex;
+    justify-content:stretch;
+    align-items: center;
+}
+.headerSignUp * {
+    text-align: center;
+    font-size: 13px;
+    padding: 0 10px;
+}
+.login {
+    border-right: solid;
+    border-color: rgb(234, 232, 232);
+    flex-grow: 1;
+}
+.signUp {
+    border-right: solid;
+    border-color: rgb(234, 232, 232);
+    flex-grow: 1;
+}
+.headerSignUp .csInfo {
+    flex-grow: 1;
+}
+.headerWrite {
+    flex-grow: 5;
+}
+.headerWriteButton {
+    background-color: #35C5F0;
+    color: white;
+    border-style: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 3px;
+}
+/* 글쓰기 버튼을 누르면 아래 팝업이 나오게 만드는 기능 구현 추가필요 */
+
+.navigator {
+    border-top: solid;
+    border-bottom: solid;
+    height: 40px;
+    border-color: rgb(234, 232, 232);
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 70px;
+}
+.navTab {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    flex-wrap: nowrap;
+    overflow-x: hidden;
+    text-align: center;
+}
+.navTab * {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2F3438;
+    height: 40px;
+    line-height: 40px;
+    flex-shrink : 0; /* item들이 컨테이너 안에 맞도록 줄어드는 비율을 정한다. 0으로 설정하면 줄어들지 않고 원래 너비를 유지한다 */
+}
+.navTabHome{
+    color: #35C5F0;
+    /* 홈 밑에 언더라인도 줘야함 */
+}
+.navTab *:not(:first-child){
+    padding: 0 7px ;
+}
+.navTab *:first-child{
+    padding-right: 7px;
+}
+.navTabReccomand:hover {
+    color: #35C5F0;
+}
+.navTabChannel:hover {
+    color: #35C5F0;
+}
+.navTabHouseWarming:hover{
+    color: #35C5F0;
+}
+.navTabHomePhoto:hover{
+    color: #35C5F0;
+}
+.navTab3DInterior:hover{
+    color: #35C5F0;
+}
+.navTabArrangement:hover{
+    color: #35C5F0;
+}
+.navTabcollectable:hover{
+    color: #35C5F0;
+}
+.navTabHomestaurant:hover{
+    color: #35C5F0;
+}
+.navTabHotPlace:hover{
+    color: #35C5F0;
+}
+.navTabParenting:hover{
+    color: #35C5F0;
+}
+.navTabplanterior:hover{
+    color: #35C5F0;
+}
+.navTabpet:hover{
+    color: #35C5F0;
+}
+
+.trendTopic {
+    font-weight: bold;
+    font-size: 16px;
+    color: #2F3438;
+    width: 20%;
+    height: 40px;
+    line-height: 40px;
+}
+.main {
+    padding: 0px 70px;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+}
+.advertiseSection {
+    width: 100%;
+    height: 500px; /*높이를 어떤 기준으로 준지 모르겠다.*/
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+.adLeft{
+    width : 73% ;
+    overflow: hidden;
+}
+.adRight {
+    width: 25%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.adLeftImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.adRightImg{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+/* 커서를 쓰고 옆에 쓰는것은 자기자신 하위에만 적용되는거같다
+다른걸쓰면 액션적용이 안된다 */
+.adLeft:hover .adLeftImg{
+    transform: scale(1.05);
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+.rightImgContainer {
+    width: 100%;
+    height: 100%;
+}
+.adRightLeftButton {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    left : -24px;
+}
+.adRightRightButton {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    right: -24px;
+}
+.adRight:hover {
+    cursor: pointer;
+}
+.adRight:hover .adRightLeftButton {
+    background-color: black;
+    cursor: pointer;
+}
+.adRight:hover .adRightRightButton {
+    background-color: black;
+    cursor: pointer;
 }

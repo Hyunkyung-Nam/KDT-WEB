@@ -1,10 +1,8 @@
 .content {
     position: relative;
-    /* width: 100vw; */
-    display: flex;
 
     animation-name: content-ani;
-    animation-timing-function: ease;
+    animation-timing-function:linear;
     animation-iteration-count: 1;
     animation-duration: 3s;
     animation-delay: 1s;
@@ -13,8 +11,10 @@
 @keyframes content-ani {
     from {
         left : 100%;
+        width: 300%;
     }
     to {
         left : 0;
+        width: 100%;
     }
 }
