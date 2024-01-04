@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0 ;
+    text-decoration: none;
+}
+
+.topBanner {
+    background-image: url("topBanner.png");
+    background-color: #00bbff;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 50px;
+    box-sizing: border-box;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 60px;
+    height: 100px;
+    box-sizing: border-box;
+}
+.header div:nth-child(1) {flex-grow: 1; }
+.header div:nth-child(2) {flex-grow: 3; }
+.header div:nth-child(3) {flex-grow: 3; }
+.header div:nth-child(4) {flex-grow: 3; }
+.header div:nth-child(5) {flex-grow: 1; }
+
+.headerSelf{
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+}
+.headerNav {
+    display: flex;
+}
+.headerNav * {
+    margin: 0 7px ;
+    font-weight: bold;
+    font-size: 17px;
+}
+.headerNav a:not(:first-child) {
+    color: black;
+}
+.headerCommunity {
+    color: #35C5F0;
+}
+
+.headerShopping:hover{
+    color: #35C5F0;
+}
+
+.headerMoveContructionLife:hover {
+    color: #35C5F0;
+}
+.headerSearch{
+    margin-right: 30px;
+}
+.totalSearch{
+    display: flex;
+    align-items: center;
+    border: rgb(197, 193, 193);
+    border-style: solid;
+    height: 30px;
+    border-radius: 5px;
+}
+.readingGlasses {
+    margin-left: 10px;
+    width: 17px;
+    height: 17px;
+    margin-right: 3px;
+}
+.totalSearchText{
+    border: 0;
+}
+.headerSignUp{
+    display: flex;
+}
