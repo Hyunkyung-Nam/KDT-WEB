@@ -1,11 +1,11 @@
 * {
     margin: 0;
-    padding: 0 ;
+    padding: 0;
     text-decoration: none;
 }
 
 .topBanner {
-    background-image: url("topBanner.png");
+    background-image: url('topBanner.png');
     background-color: #00bbff;
     background-size: contain;
     background-repeat: no-repeat;
@@ -23,14 +23,23 @@
     box-sizing: border-box;
     /* 얘 상단에 고정시키려면 fixed해야하는데 그러면 레이아웃 다 망가짐.. ㅇㅂㅇ.. 어케할지 고민해봐야겠음 */
 }
-.headerSelf{flex-grow: 1; }
-.headerNav{flex-grow: 2; }
-.headerCart{flex-grow: 1; }
-.headerSearch{flex-grow: 4; }
-.headerSignUp{flex-grow: 2; }
+.headerSelf {
+    flex-grow: 1;
+}
+.headerNav {
+    flex-grow: 2;
+}
+.headerCart {
+    flex-grow: 1;
+}
+.headerSearch {
+    flex-grow: 4;
+}
+.headerSignUp {
+    flex-grow: 2;
+}
 
-
-.headerSelf *{
+.headerSelf * {
     font-size: 25px;
     font-weight: bold;
     color: black;
@@ -38,11 +47,11 @@
 .headerNav {
     display: flex;
 }
-.headerNav *:first-child{
+.headerNav *:first-child {
     margin-left: 20px;
 }
 .headerNav * {
-    margin: 0 7px ;
+    margin: 0 7px;
     font-weight: bold;
     font-size: 17px;
 }
@@ -50,30 +59,29 @@
     color: black;
 }
 .headerCommunity {
-    color: #35C5F0;
+    color: #35c5f0;
 }
 
-.headerShopping:hover{
-    color: #35C5F0;
+.headerShopping:hover {
+    color: #35c5f0;
 }
 
 .headerMoveContructionLife:hover {
-    color: #35C5F0;
+    color: #35c5f0;
 }
-.headerSearch{
+.headerSearch {
     margin-right: 30px;
 }
-.totalSearch{
+.totalSearch {
     display: flex;
     position: relative;
     align-items: center;
 }
-.totalSearchText:hover{
+.totalSearchText:hover {
     background-color: rgb(228, 225, 225);
 }
 .totalSearchText:focus {
-    border-color: #35C5F0;
-    
+    border-color: #35c5f0;
 }
 .readingGlasses {
     margin-left: 10px;
@@ -81,27 +89,27 @@
     height: 25px;
     margin-right: 3px;
 }
-.totalSearchText{
+.totalSearchText {
     position: absolute;
     outline: none;
     width: Calc(100% - 35px);
-    background-color:unset;
+    background-color: unset;
     border: rgb(197, 193, 193);
-    border-style:solid;
+    border-style: solid;
     height: 30px;
     border-radius: 5px;
     padding-left: 35px;
     z-index: 2;
 }
 .totalSearch::before {
-    content:"";
+    content: '';
     position: absolute;
-    background-image: url("readingGlasses.png");
+    background-image: url('readingGlasses.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 20px;
     height: 20px;
-    left:10px;
+    left: 10px;
     z-index: 3;
 }
 .cart {
@@ -109,10 +117,10 @@
     line-height: 1;
 }
 .cart::before {
-    content:"";
+    content: '';
     position: relative;
     display: inline-block;
-    background-image: url("shoppingBasket.png");
+    background-image: url('shoppingBasket.png');
     background-size: contain;
     background-repeat: no-repeat;
     width: 40px;
@@ -120,15 +128,17 @@
     left: 0px;
     z-index: 3;
 }
-.headerSignUp{
+.headerSignUp {
     display: flex;
-    justify-content:stretch;
+    justify-content: stretch;
     align-items: center;
 }
 .headerSignUp * {
     text-align: center;
     font-size: 13px;
     padding: 0 10px;
+    color: black;
+    width: 100%;
 }
 .login {
     border-right: solid;
@@ -147,14 +157,20 @@
     flex-grow: 5;
 }
 .headerWriteButton {
-    background-color: #35C5F0;
+    background-color: #35c5f0;
     color: white;
     border-style: none;
     width: 70px;
     height: 30px;
     border-radius: 3px;
 }
-/* 글쓰기 버튼을 누르면 아래 팝업이 나오게 만드는 기능 구현 추가필요 */
+.headerWriteButton:hover {
+    cursor: pointer;
+}
+.headerWriteButton:active {
+    /* 글쓰기 버튼을 누르면 아래 팝업이 나오게 만드는 기능 구현 추가필요 */
+    color: aliceblue;
+}
 
 .navigator {
     border-top: solid;
@@ -178,62 +194,62 @@
 .navTab * {
     font-weight: bold;
     font-size: 16px;
-    color: #2F3438;
+    color: #2f3438;
     height: 40px;
     line-height: 40px;
-    flex-shrink : 0; /* item들이 컨테이너 안에 맞도록 줄어드는 비율을 정한다. 0으로 설정하면 줄어들지 않고 원래 너비를 유지한다 */
+    flex-shrink: 0; /* item들이 컨테이너 안에 맞도록 줄어드는 비율을 정한다. 0으로 설정하면 줄어들지 않고 원래 너비를 유지한다 */
 }
-.navTabHome{
-    color: #35C5F0;
+.navTabHome {
+    color: #35c5f0;
     /* 홈 밑에 언더라인도 줘야함 */
 }
-.navTab *:not(:first-child){
-    padding: 0 7px ;
+.navTab *:not(:first-child) {
+    padding: 0 7px;
 }
-.navTab *:first-child{
+.navTab *:first-child {
     padding-right: 7px;
 }
 .navTabReccomand:hover {
-    color: #35C5F0;
+    color: #35c5f0;
 }
 .navTabChannel:hover {
-    color: #35C5F0;
+    color: #35c5f0;
 }
-.navTabHouseWarming:hover{
-    color: #35C5F0;
+.navTabHouseWarming:hover {
+    color: #35c5f0;
 }
-.navTabHomePhoto:hover{
-    color: #35C5F0;
+.navTabHomePhoto:hover {
+    color: #35c5f0;
 }
-.navTab3DInterior:hover{
-    color: #35C5F0;
+.navTab3DInterior:hover {
+    color: #35c5f0;
 }
-.navTabArrangement:hover{
-    color: #35C5F0;
+.navTabArrangement:hover {
+    color: #35c5f0;
 }
-.navTabcollectable:hover{
-    color: #35C5F0;
+.navTabcollectable:hover {
+    color: #35c5f0;
 }
-.navTabHomestaurant:hover{
-    color: #35C5F0;
+.navTabHomestaurant:hover {
+    color: #35c5f0;
 }
-.navTabHotPlace:hover{
-    color: #35C5F0;
+.navTabHotPlace:hover {
+    color: #35c5f0;
 }
-.navTabParenting:hover{
-    color: #35C5F0;
+.navTabParenting:hover {
+    color: #35c5f0;
 }
-.navTabplanterior:hover{
-    color: #35C5F0;
+.navTabplanterior:hover {
+    color: #35c5f0;
 }
-.navTabpet:hover{
-    color: #35C5F0;
+.navTabpet:hover {
+    color: #35c5f0;
 }
 
 .trendTopic {
     font-weight: bold;
     font-size: 16px;
-    color: #2F3438;
+    color: #2f3438;
     width: 20%;
     height: 40px;
     line-height: 40px;
@@ -250,8 +266,8 @@
     justify-content: space-between;
     padding: 30px 0;
 }
-.adLeft{
-    width : 73% ;
+.adLeft {
+    width: 73%;
     overflow: hidden;
 }
 .adRight {
@@ -265,7 +281,19 @@
     height: 100%;
     border-radius: 5px;
 }
-.adLeft:hover .adLeftImg{
+.add-left-button {
+    width: 100%;
+    height: 100%;
+    background-color: unset;
+    border: none;
+}
+.add-right-button {
+    width: 100%;
+    height: 100%;
+    background-color: unset;
+    border: none;
+}
+.adLeft:hover .adLeftImg {
     transform: scale(1.05);
     transition-duration: 0.3s;
     cursor: pointer;
@@ -277,7 +305,7 @@
     position: relative;
     overflow: hidden;
 }
-.adRightImg{
+.adRightImg {
     width: 100%;
     height: 100%;
     border-radius: 5px;
@@ -292,7 +320,7 @@
     position: absolute;
     width: 48px;
     height: 48px;
-    left : -24px;
+    left: -24px;
     z-index: 100;
 }
 .adRightRightButton {
@@ -305,26 +333,29 @@
 .adRight:hover {
     cursor: pointer;
 }
-.adRight:hover > .rightImgContainer > .adRightImg{
+.adRight:hover > .rightImgContainer > .adRightImg {
     transform: scale(1.05);
-    transition-duration: 0.3s; 
+    transition-duration: 0.3s;
 }
-.adRight:hover > .adRightLeftButton { /*다음요소가 아닌데 이게 맞는건가*/
+.adRight:hover > .adRightLeftButton {
+    /*다음요소가 아닌데 이게 맞는건가*/
     background-color: white;
     border-radius: 50%;
-    background-image: url("adRightLeftArrow.png");
+    background-image: url('adRightLeftArrow.png');
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: 1px 1px 1px 1px rgb(237, 236, 236);
     cursor: pointer;
 }
 .adRight:hover > .adRightRightButton {
     background-color: white;
     border-radius: 50%;
-    background-image: url("adRightRightAtrrow.png");
+    background-image: url('adRightRightAtrrow.png');
     background-size: 50%;
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: 1px 1px 1px 1px rgb(237, 236, 236);
     cursor: pointer;
 }
 .adRightLeftButton:hover {
@@ -332,14 +363,14 @@
 }
 .adRightLeftButton:hover ~ .rightImgContainer > .adRightImg {
     transform: scale(1);
-    transition-duration: 0.3s; 
+    transition-duration: 0.3s;
 }
 .adRightRightButton:hover {
     background-color: rgb(235, 234, 234) !important; /*이렇게 강제로 해도 되는것인가*/
 }
 .adRightRightButton:hover ~ .rightImgContainer > .adRightImg {
     transform: scale(1);
-    transition-duration: 0.3s; 
+    transition-duration: 0.3s;
 }
 .iconSection {
     display: flex;
@@ -352,7 +383,7 @@
 .iconSection > * {
     width: 100%;
     padding: 10px;
-    color: #2F3438;
+    color: #2f3438;
 }
 .iconSection > * > * {
     width: 100%;
@@ -364,7 +395,7 @@
     justify-content: space-between;
     align-items: center;
 }
-.findPhotoSectionHead{
+.findPhotoSectionHead {
     font-weight: bold;
     padding: 10px 0;
     font-size: 20px;
@@ -381,12 +412,21 @@
     font-weight: 700;
     color: rgb(53, 197, 240);
     cursor: pointer;
-    background-color:unset;
+    background-color: unset;
     border-style: none;
 }
-.findPhotoSectionPhotoSection{
+.findPhotoSectionPhotoSection {
+    overflow: visible;
+    position: relative;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+.findPhotoSectionPhotoSectionUIWrap {
+    position: relative;
     display: flex;
-    overflow: hidden;
+    /* overflow: hidden; */
     flex-shrink: 0;
     justify-content: flex-start;
     align-items: center;
@@ -396,6 +436,8 @@
     padding: 20px 0;
     list-style: none;
     display: flex;
+    position: relative;
+    left: 0;
     overflow: hidden;
     flex-shrink: 0;
     width: 100%;
@@ -415,4 +457,29 @@
 .findPhotoSectionPhotoSectionUl > li > div > img {
     width: 100%;
     border-radius: 5px;
+}
+.findPhotoSectionPhotoSectionRightButton {
+    position: absolute;
+    top: calc(50% - 24px);
+    width: 48px;
+    height: 48px;
+    right: -24px;
+    z-index: 100;
+    overflow: visible;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px 1px rgb(237, 236, 236);
+    background-color: white;
+    background-image: url('adRightRightAtrrow.png');
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+.findPhotoSectionPhotoSectionRightButton:hover {
+    background-color: rgb(235, 234, 234) !important; /*이렇게 강제로 해도 되는것인가*/
+}
+.findPhotoSectionPhotoSectionRightButton:active + div > ul {
+    left: -100%;
+    overflow: visible;
+    /*  버튼 눌리면 다른화면 뜨게 만들기 */
 }
