@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="practice2.css" />
+    </head>
+    <body>
+        <div class="main">
+            <div id="head">방명록입니다.</div>
+            <form id="write-section">
+                <label for="writter-name">작성자 : </label>
+                <input type="text" id="write-name-id" /><br />
+                <label for="writter-name">내용 : </label>
+                <input type="text" id="wrtie-content-id" /><br />
+                <button type="button" id="write-btn" onclick="writeContent()">작성</button>
+            </form>
+            <div id="table-section">
+                <table id="table" border="1" cellspacing="1" cellpadding="10">
+                    <thead style="font-weight: bold">
+                        <tr>
+                            <td>번호</td>
+                            <td>작성자</td>
+                            <td>내용</td>
+                            <td>작성일</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-id"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="practice2.js"></script>
+    </body>
+</html>

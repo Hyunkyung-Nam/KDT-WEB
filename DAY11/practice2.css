@@ -1,0 +1,46 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 10px;
+    width: 50vw;
+    min-height: 50vh;
+    height: fit-content;
+    background-color: antiquewhite;
+}
+.main > * {
+    width: 100%;
+    margin-bottom: 20px;
+    margin: 5px 20px;
+}
+
+#head {
+    width: calc(100% - 40px);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+#write-section > * {
+    margin-bottom: 10px;
+}
+
+#table-section {
+    width: 100%;
+}
+
+#table {
+    width: calc(100% - 40px);
+    text-align: center;
+    table-layout: fixed;
+    margin-bottom: 20px;
+}
+#table > thead {
+    white-space: nowrap;
+    width: fit-content;
+}
+.tableContents {
+    word-break: break-all;
+}
+
+#tbody-id td:last-child {
+    white-space: nowrap;
+}
