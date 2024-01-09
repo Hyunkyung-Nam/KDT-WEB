@@ -9,6 +9,7 @@
     <body>
         <div class="topBannerSection">
             <a href=""><div class="topBanner"></div></a>
+            <button type="button" class="topBannerCloseBtn" onclick="topBannerCloseClick()">X</button>
         </div>
 
         <div class="header">
@@ -29,7 +30,6 @@
                 <a href="장바구니링크"><span class="cart"></span></a>
             </div>
             <div class="headerSignUp">
-                <!-- 장바구니/로그인/회원가입/고객센터 링크넣기 -->
                 <div class="login"><a href="" class="login-link">로그인</a></div>
                 <div class="signUp"><a href="" class="sign-up-link">회원가입</a></div>
                 <div class="csInfo"><a href="" class="csInfoLink">고객센터</a></div>
@@ -148,7 +148,22 @@
                     </div>
                 </div>
                 <div class="findPhotoSectionPhotoSection">
-                    <div class="findPhotoSectionPhotoSectionRightButton"></div>
+                    <div
+                        class="findPhotoSectionPhotoSectionLeftButtonSection findPhotoSectionPhotoSectionLeftButtonSectionHide"
+                    >
+                        <button
+                            type="button"
+                            class="findPhotoSectionPhotoSectionLeftButton"
+                            onclick="findPhotoSectionleftButtonClick()"
+                        ></button>
+                    </div>
+                    <div class="findPhotoSectionPhotoSectionRightButtonSection">
+                        <button
+                            type="button"
+                            class="findPhotoSectionPhotoSectionRightButton"
+                            onclick="findPhotoSectionRightButtonClick()"
+                        ></button>
+                    </div>
                     <div class="findPhotoSectionPhotoSectionUIWrap">
                         <ul class="findPhotoSectionPhotoSectionUl">
                             <li>
@@ -267,5 +282,6 @@
             <div class="siteInfo"></div>
             <div class="companyInfo"></div>
         </div>
+        <script src="todayHouse_V2.js"></script>
     </body>
 </html>
