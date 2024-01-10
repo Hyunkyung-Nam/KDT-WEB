@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .hidden {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="exam">1</div>
+        <div class="exam">2</div>
+        <div class="exam">3</div>
+        <div class="exam">4</div>
+        <div class="exam">5</div>
+
+        <!-- innerText vs textContent -->
+        <div id="exam">
+            보이는 텍스트,
+            <span class="hidden">안보이는 텍스트, </span>
+            <span style="display: inline">보이는 텍스트2, </span>
+            <script>
+                console.log('script tag');
+            </script>
+            <style>
+                body {
+                    margin: 0;
+                }
+            </style>
+            스크립트와 스타일 후 보이는 텍스트
+        </div>
+    </body>
+    <script>
+        //동적, 정적 설명
+        //const exam = document.getElementsByClassName('exam'); //httpcollection은 동적
+        // const exam = document.querySelectorAll('.exam'); //css선택자니까 .exam으로 가져오고 얘는 정적 nodelist
+        // console.log(exam);
+        // for (let i = 1; i < exam.length; i += 2) {
+        //     console.log(exam.item(i)); //짝수번째 아이템 출력
+        //    exam.item(i).parentNode.removeChild(exam.item(i));
+        /*2와 4가 지워지길 생각했지만 2가 지워지면서 배열이 줄어들었기 때문에 5가 item(4)가 되어 지워진다
+            getElementsByClassName이 동적이라는 개념 설명.*/
+        /*querySelectorAll로 하면 얘는 정적개념이라 2와 4만 지워진다.
+            얘는 겉보기에만 지워지고 실제로 지워진게 아니다. 이상해.. ㅋㅋㅋㅋㅋㅋㅋㅋ
+             */
+        // exam.item(i).style.color = 'red';
+        //   }
+        //  console.log(exam);
+
+        /**
+         * innerText : 1. "랜더링된" 텍스트를 반영 -> 즉, 스타일링이 적용된 후 텍스트 반환
+         *             2. textContent보다 성능이 느릴 수 있음(css렌더링이 적용되느라)
+         * textContent : 1. 요소 "전체" 텍스트 컨텐츠를 가져옴. 즉, CSS스타일에 관계 없이 모든 텍스트 반환
+         *               2. 렌더링된 텍스트를 계산하지 않기 때문에 성능면에서 innertext보다 더 빠름.
+         * 우리가 ""에 넣어 할당할 때엔 별 차이가 없지만 css에 적용된거 가져 올 때에 차이가 생김
+         */
+        //차이가 뭔지 전혀 모르겠다.
+
+        let exam = document.getElementById('exam');
+        console.log('innerText', exam.innerText);
+        console.log('textContent', exam.textContent);
+    </script>
+</html>
