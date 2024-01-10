@@ -415,6 +415,10 @@
     padding: 10px 0;
     font-size: 20px;
 }
+.findPhotoSectionHead:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
 .findPhotoSectionText {
     font-size: 14px;
     line-height: 18px;
@@ -429,6 +433,9 @@
     cursor: pointer;
     background-color: unset;
     border-style: none;
+}
+.findPhotoSectionButton:hover {
+    opacity: 0.5;
 }
 .findPhotoSectionPhotoSection {
     overflow: visible;
@@ -466,7 +473,7 @@
     scroll-snap-align: start;
     width: calc(16.6667% - 16.6667px);
 }
-.findPhotoSectionPhotoSectionUl > li > div {
+.findPhotoSectionPhotoSectionUl > li > *:first {
     width: 100%;
 }
 .findPhotoSectionPhotoSectionUl > li > div > img {
@@ -479,7 +486,7 @@
     top: calc(50% - 24px);
     width: 48px;
     height: 48px;
-    left: -5px;
+    left: -24px;
     z-index: 5;
     overflow: visible;
 }
@@ -534,8 +541,45 @@
 }
 .findPhoToSectionFirstHide {
     overflow: visible;
-    left: -100%;
+    left: -84.8%;
 }
 .findPhotoSectionPhotoSectionLeftButtonSectionHide {
     display: none;
+}
+.findPhotoSectionPhotoSectionPhoto11 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.findePhotoSectionMore {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+}
+.findePhotoSectionMore:hover {
+    cursor: pointer;
+}
+.findePhotoSectionMore:hover > *:first-child {
+    background-color: rgb(235, 234, 234);
+}
+.findePhotoSectionMore *:first-child {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(234, 237, 239);
+    margin-bottom: 6px;
+    background-image: url('moreArrow.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.findePhotoSectionMore *:first-child > * {
+    width: 100px;
+}
+.findePhotoSectionMore *:last-child {
+    font-size: 14px;
+    line-height: 20px;
 }

@@ -1,24 +1,23 @@
-let topBannerSection = document.getElementsByClassName('topBannerSection');
-let findPhotoSectionPhotoSectionUl = document.getElementsByClassName('findPhotoSectionPhotoSectionUl');
-let findPhotoSectionPhotoSectionLeftButtonSection = document.getElementsByClassName(
-    'findPhotoSectionPhotoSectionLeftButtonSection'
-);
-
 function topBannerCloseClick() {
-    // topBannerSection;
-    //topBannerSection.className.add('topBannerClose');
-    topBannerSection.item(0).classList.add('topBannerClose');
-    console.log(hello);
+    $('.topBannerSection').addClass('topBannerClose');
 }
 function findPhotoSectionRightButtonClick() {
-    findPhotoSectionPhotoSectionUl.item(0).classList.add('findPhoToSectionFirstHide');
-    findPhotoSectionPhotoSectionLeftButtonSection
-        .item(0)
-        .classList.remove('findPhotoSectionPhotoSectionLeftButtonSectionHide');
+    $('.findPhotoSectionPhotoSectionUl').addClass('findPhoToSectionFirstHide');
+    $('.findPhotoSectionPhotoSectionLeftButtonSection').removeClass(
+        'findPhotoSectionPhotoSectionLeftButtonSectionHide'
+    );
+    $('.findPhotoSectionPhotoSectionRightButtonSection').addClass('findPhoToSectionFirstHide');
 }
 function findPhotoSectionleftButtonClick() {
-    findPhotoSectionPhotoSectionLeftButtonSection
-        .item(0)
-        .classList.add('findPhotoSectionPhotoSectionLeftButtonSectionHide');
-    findPhotoSectionPhotoSectionUl.item(0).classList.remove('findPhoToSectionFirstHide');
+    $('.findPhotoSectionPhotoSectionLeftButtonSection').addClass('findPhotoSectionPhotoSectionLeftButtonSectionHide');
+    $('.findPhotoSectionPhotoSectionUl').removeClass('findPhoToSectionFirstHide');
+    $('.findPhotoSectionPhotoSectionRightButtonSection').removeClass('findPhoToSectionFirstHide');
 }
+
+$('.findePhotoSectionMore').addEventListener('click', function () {
+    //페이지 이동시키는 거 만들어주기
+});
+
+$('.findPhotoSectionHead').addEventListener('click', function () {
+    //페이지 이동시키는 거 만들어주기
+});
