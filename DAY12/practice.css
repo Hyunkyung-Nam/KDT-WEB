@@ -60,3 +60,6 @@ button {
 .span {
     background-color: yellow;
 }
+.buttonBox > *:hover {
+    cursor: pointer;
+}
