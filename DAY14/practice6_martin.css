@@ -1,0 +1,55 @@
+/* 모바일 화면 -> 큰화면으로 만드는게 더 편하다! */
+* {
+    margin: 0;
+    padding: 0;
+}
+header {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+    background-color: turquoise;
+}
+.logo {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: aquamarine;
+}
+nav > div {
+    width: 100%;
+    padding: 5px 0;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+    }
+    header > .logo {
+        height: 100px;
+    }
+    header > * {
+        width: fit-content;
+        height: 100px;
+    }
+    svg {
+        width: 80px;
+        height: 100px;
+    }
+    nav {
+        flex-direction: row;
+        background-color: unset;
+    }
+}
