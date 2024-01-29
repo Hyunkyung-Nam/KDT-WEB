@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="text1" style="width: 100px; height: 100px"></div>
+        <div class="text2" style="width: 100px; height: 100px"></div>
+
+        <script>
+            // 배열구조분해 (순서가 매우 중요) 2-3개 내에서 사용
+            const lists = ['apple', 'grape'];
+            let [item1, item2, item3 = 'peach'] = lists;
+            console.log('item1', item1, 'item2', item2, 'item3', item3);
+            item1 = 'banana';
+            console.log('item1', item1);
+
+            // 교환(잘 쓰이진 않음)
+            let x = 1,
+                y = 3;
+            [x, y] = [y, x];
+            console.log(x, y);
+
+            // console.log(document.getElementsByClassName('text1'));
+            // document.getElementsByClassName('text1').textContent = apple;
+
+            //객체
+            const obj = {
+                // key : value
+                name: 'hyunkyung',
+                age: 20,
+                gender: 'W',
+                friends: ['Alex', 'Kevin'],
+                hello: function () {
+                    console.log('Hello World!');
+                },
+                'kdt-11': 'kdt-11기',
+            };
+            //기존에 접근방법 , 메모리 접근
+            console.log(obj.name, obj.age);
+            obj.age = 29;
+            console.log(obj.age);
+            //. 접근제어 연산자
+            console.log(obj['name']);
+            obj.city = '서울';
+            console.log(obj);
+            obj.hello();
+            // 'kdt-11': 'kdt-11기',
+            console.log(obj['kdt-11']); // 문자열처리해서 접근해야하기때문에 .으로 접근물가
+            console.log(obj.friends[0]);
+
+            //얘는 메모리 접근이 아니라 값 복사
+            let { name, age, gender, friends, hello } = obj;
+            let { age: newAge } = obj;
+            age333 = obj.age;
+            console.log('name : ', name, 'age : ', age, 'gender : ', gender);
+            console.log(newAge);
+            console.log(age);
+            // obj의 age 의 key를 newAge로 바꾸면 newAge로만 바꿔야 바뀐다.
+            age = 10;
+            console.log(newAge);
+            console.log(age);
+            console.log(obj);
+
+            newAge = 20;
+            console.log(newAge);
+            console.log(age);
+
+            console.log(obj);
+            console.log(friends);
+            hello();
+
+            /* a= []
+            b= []
+
+            a = b; 메모리 주소를 같게하는거 */
+
+            // console.log(sample());
+            // function sample() {
+            //     return {
+            //         name: '홍길동',
+            //         age: 18,
+            //     };
+            // }
+        </script>
+    </body>
+</html>

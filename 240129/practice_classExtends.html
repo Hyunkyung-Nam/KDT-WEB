@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            class Shape {
+                constructor(width, height) {
+                    this.width = width;
+                    this.height = height;
+                }
+                getArea() {
+                    return this.width * this.height;
+                }
+            }
+            class Rectangle extends Shape {
+                getDiagonal() {
+                    return Math.sqrt(this.width ** 2 + this.height ** 2);
+                }
+            }
+            class Triangle {
+                getArea() {}
+            }
+            class Circle extends Shape {
+                constructor(width, height, radius) {
+                    super(width, height);
+                    this.radius = radius;
+                } // 자바스크립트는 생성자 여러개 만드는거 불가 / 자바에서는 생성자 여러개 만드는거 가능
+                //overloading
+                getArea() {
+                    // overwritting
+                    return this.radius * this.radius * Math.PI;
+                }
+            }
+            let sqrt = new Rectangle(3, 4);
+            console.log(sqrt.getDiagonal());
+            console.log(sqrt.getArea());
+
+            let circle1 = new Circle(0, 0, 1);
+
+            console.log(circle1.getArea());
+        </script>
+    </body>
+</html>
