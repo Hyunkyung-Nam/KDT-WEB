@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            class Car {
+                constructor(brand) {
+                    this.brand = brand;
+                }
+                heaterOn() {
+                    console.log('히터를 켭니다');
+                }
+                heaterOff() {
+                    console.log('히터를 끕니다');
+                }
+                brandShow() {
+                    console.log(`브랜드 : ${this.brand}`);
+                }
+                welcome() {
+                    console.log('오늘도 안전운전하세요');
+                }
+            }
+            let car = new Car('현대');
+            car.welcome();
+
+            class G80 extends Car {
+                constructor(brand, type) {
+                    super(brand);
+                    this.type = type;
+                }
+
+                info() {
+                    console.log(`${this.brand}의 ${this.type}입니다`);
+                }
+                welcome() {
+                    console.log(`오늘도 ${this.type}과 함께 안전운전 하세요! `);
+                }
+            }
+
+            let newCar = new G80('현대', 'G80');
+            newCar.info();
+            newCar.welcome();
+
+            console.log('\n\n\n\n\n\n');
+
+            function hi() {
+                console.log('hi');
+            }
+
+            // function myNameIs(callback) {
+            //     setTimeout(() => {
+            //         console.log('my name is');
+            //         callback();
+            //     }, 1000);
+            // }
+            function myNameIs() {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log('my name is');
+                        resolve('성공하였습니다.');
+                    }, 1000);
+                });
+            }
+            function name() {
+                console.log('현경');
+            }
+
+            // hi();
+            // myNameIs(function () {
+            //     console.log('현경');
+            // });
+            // hi();
+            // myNameIs()
+            //     .then((response) => {
+            //         //response에 '성공하였습니다'가 담겨져옴
+            //         name();
+            //     })
+            //     .catch(() => {
+            //         //실패시 수행할 동작을 작성
+            //     });
+
+            // function changeBgColor(color) {
+            //     return new Promise((resolve, reject) => {
+            //         setTimeout(() => {
+            //             document.body.style.backgroundColor = color;
+            //             resolve();
+            //         }, 1000);
+            //     });
+            // }
+
+            // changeBgColor('red')
+            //     .then(() => {
+            //         return changeBgColor('orange');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('yellow');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('green');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('blue');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('navy');
+            //     })
+            //     .then(() => {
+            //         return changeBgColor('purple');
+            //     });
+            function changeBgColor(color) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = color;
+                        resolve();
+                    }, 1000);
+                });
+            }
+            async function exec() {
+                await changeBgColor('red');
+                await changeBgColor('orange');
+                await changeBgColor('yellow');
+                await changeBgColor('green');
+                await changeBgColor('blue');
+                await changeBgColor('navy');
+                await changeBgColor('purple');
+            }
+            //exec();
+
+            function goClass(name) {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        console.log(`${name}님이 입실하였습니다.`);
+                        const hours = new Date().getHours();
+                        const minutes = new Date().getMinutes();
+
+                        const time = [hours, minutes];
+                        resolve(time);
+                    }, 1000);
+                });
+            }
+            function goHome(name) {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        console.log(`${name}님이 퇴실하였습니다.`);
+                    }, 1000);
+                });
+            }
+
+            async function daySchedule() {
+                let arrivedTime = await goClass('남현경');
+                console.log(`입실시간은 ${arrivedTime[0]}시 ${arrivedTime[1]}분 입니다.`);
+                await goHome('남현경');
+            }
+            daySchedule();
+        </script>
+    </body>
+</html>
