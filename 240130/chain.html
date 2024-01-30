@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //(4+3)*2-1 = 13
+            //callback방법
+            // function add(n1, n2, cb) {
+            //     setTimeout(() => {
+            //         let result = n1 + n2;
+            //         cb(result);
+            //     }, 1000);
+            // }
+            // function mul(n, cb) {
+            //     setTimeout(() => {
+            //         let result = n * 2;
+            //         cb(result);
+            //     }, 700);
+            // }
+            // function sub(n, cb) {
+            //     setTimeout(() => {
+            //         let result = n - 1;
+            //         cb(result);
+            //     }, 500);
+            // }
+
+            // add(3, 4, function (x) {
+            //     console.log(`1 : ${x}`);
+            //     mul(x, function (y) {
+            //         console.log(`2 : ${y}`);
+            //         sub(y, function (z) {
+            //             console.log(`3 : ${z}`);
+            //         });
+            //     });
+            // });
+
+            function add(n1, n2) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        let result = n1 + n2;
+                        resolve(result);
+                    }, 1000);
+                });
+            }
+            function mul(n1) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        let result = n1 * 2;
+                        resolve(result);
+                    }, 700);
+                });
+            }
+            function sub(n1) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        let result = n1 - 1;
+                        resolve(result);
+                    }, 500);
+                });
+            }
+            add(3, 4)
+                .then((res) => {
+                    // response로 많이씀 res
+                    console.log(`1 : ${res}`);
+                    return mul(res); // 다음 then을 보내주기 위해서 return으로 알려줘야함
+                })
+                .then((res) => {
+                    console.log(`2 : ${res}`);
+                    return sub(res);
+                })
+                .then((res) => {
+                    console.log(`3 : ${res}`);
+                });
+        </script>
+    </body>
+</html>
