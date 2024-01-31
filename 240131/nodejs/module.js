@@ -1,3 +1,11 @@
+export const a = 'a 변수';
+export const b = 'b 변수';
+export const c = 20;
+
+export function print() {
+    console.log(`c는 ${c}입니다`);
+}
+
 //하나의 모듈파일에 하나의 모듈 만들기
 /*
 const a = 10;
@@ -11,13 +19,13 @@ function connect() {
 module.exports = connect;*/
 
 //하나의 모듈파일에 여러개 모듈만들기
-/*
-const a = 'a 변수';
-const b = 'b 변수';
-const c = 20;
 
-function print() {
-    console.log(`c는 ${c}입니다`);
-}
+// const a = 'a 변수';
+// const b = 'b 변수';
+// const c = 20;
 
-module.exports = { a, b, c, print };*/
+// function print() {
+//     console.log(`c는 ${c}입니다`);
+// }
+
+// module.exports = { a, b, c, print };

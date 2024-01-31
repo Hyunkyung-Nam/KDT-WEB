@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function first() {
+                console.log('1');
+                second();
+                console.log('2');
+            }
+            function second() {
+                console.log('3');
+                setTimeout(() => {
+                    third();
+                    console.log('4');
+                }, 3000);
+                console.log('5');
+            }
+            function third() {
+                console.log('6');
+            }
+            first();
+        </script>
+    </body>
+</html>

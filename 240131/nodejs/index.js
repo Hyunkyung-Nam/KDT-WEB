@@ -1,3 +1,6 @@
+import { a, b, c, print } from './module.js';
+print();
+
 /* const connect = require('./module.js');
 const { a, b, c, print } = connect;
 
@@ -34,7 +37,7 @@ server.on('connection', function () {
     console.log('접속이벤트');
 });*/
 
-const http = require('http');
+/*const http = require('http');
 const fs = require('fs'); // file system, 파일을 내보내거나 받을 때 필요함
 
 const server = http.createServer(function (req, res) {
@@ -58,4 +61,4 @@ const server = http.createServer(function (req, res) {
 
 server.listen(8000, function () {
     console.log('http://localhost:8000');
-});
+});*/
