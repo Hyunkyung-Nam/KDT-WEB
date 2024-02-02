@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form onsubmit="submitFunc(event)" name="button-form">
+            <label for="name">이름</label>
+            <input type="text" id="name" required /><br />
+            <label for="email">이메일</label>
+            <input type="email" id="email" required />
+            <button type="submit">제출</button>
+        </form>
+        <script>
+            function submitFunc(event) {
+                //submit으로 함수이름 만들면 안됨!
+                event.preventDefault(); // 기본 제출 동작을 막아줌
+                console.log(event);
+                //event.target제일 많이 사용될것이다!
+                console.log('hi');
+                const form = document.forms['button-form'];
+                console.log(form); //왜 백틱안에 넣어서 출력하면 안나올까.
+                console.log(form.name);
+                console.log(form.email);
+                console.log(form.name.value);
+                console.log(form.email.value);
+
+                const name = document.getElementById('name').value;
+                console.log(name);
+            }
+        </script>
+    </body>
+</html>

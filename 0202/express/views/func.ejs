@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form name="button-form">
+            <label for="name">이름</label>
+            <input type="text" id="name" required /><br />
+            <label for="email">이메일</label>
+            <input type="email" id="email" required />
+            <button type="button" onclick="func()">제출</button>
+        </form>
+        <script>
+            function func() {
+                const form = document.forms['button-form'];
+                console.log(form); //왜 백틱안에 넣어서 출력하면 안나올까.
+                console.log(form.name);
+                console.log(form.email);
+                console.log(form.name.value);
+                console.log(form.email.value);
+
+                const name = document.getElementById('name').value;
+                console.log(name);
+            }
+        </script>
+    </body>
+</html>
