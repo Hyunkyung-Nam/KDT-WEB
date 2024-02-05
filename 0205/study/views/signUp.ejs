@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>회원가입 동적폼전송</title>
+    </head>
+    <body>
+        <h1>회원가입 동적폼전송</h1>
+        <form onsubmit="signUp(event)" enctype="multipart/form-data">
+            <input type="text" name="id" placeholder="아이디" /><br />
+            <input type="password" name="pw" placeholder="비밀번호" /><br />
+            <input type="text" name="username" placeholder="이름" /><br />
+            <input type="number" name="age" placeholder="나이" /><br />
+            <input type="file" name="upload-file" id="upload-file" /><br /><br />
+            <button type="submit">회원가입</button>
+        </form>
+        <br /><br />
+        <div class="result-box">
+            <img class="result-img" src="" alt="" />
+            <div class="result-id"></div>
+            <div class="result-pw"></div>
+            <div class="result-username"></div>
+            <div class="result-age"></div>
+        </div>
+        <script>
+            document.querySelector('.result-id').textContent = '안녕!';
+
+            async function signUp(event) {
+                event.preventDefault();
+                const form = document.querySelector('form');
+                const userImg = document.querySelector('.result-img');
+                const reusltId = document.querySelector('.result-id');
+                const resultPw = document.querySelector('.result-pw');
+                const reusltUsername = document.querySelector('.result-username');
+                const resultAge = document.querySelector('.result-age');
+                const formData = new FormData();
+                const file = document.getElementById('upload-file');
+                formData.append('upload-file', file.files[0]);
+
+                const data = {
+                    id: form.id.value,
+                    pw: form.pw.value,
+                    username: form.username.value,
+                    age: form.age.value,
+                };
+                console.log(data);
+                try {
+                    let dataRes = await axios({
+                        method: 'POST',
+                        url: '/dyanmicDataUpload',
+                        data: data,
+                    });
+
+                    // console.log();
+
+                    try {
+                        let fileRes = await axios({
+                            method: 'post',
+                            url: '/dynamicFileUpload',
+                            data: formData,
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                            },
+                        });
+                        console.log('hello');
+                        console.log(fileRes);
+                        console.log(dataRes.data.id);
+                        userImg.src = fileRes.data.path;
+                        reusltId.textContent = `${dataRes.data.id}님 환영합니다!`;
+                        resultPw.textContent = `비밀번호 : ${dataRes.data.pw}`;
+                        reusltUsername.textContent = `이름 : ${dataRes.data.username}`;
+                        resultAge.textContent = `나이 : ${dataRes.data.age}`;
+                    } catch (error) {}
+                } catch (error) {}
+            }
+        </script>
+    </body>
+</html>
