@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+        <title>비동기 http통신 연습</title>
+    </head>
+    <body>
+        <h1>회원가입</h1>
+        <form name="sign-up-form" style="width: 500px">
+            <label for="id">아이디</label>
+            <input type="text" id="id" placeholder="아이디" /><br />
+            <label for="pw">비밀번호</label>
+            <input type="password" id="pw" placeholder="비밀번호" /><br />
+            <label for="pw-check">비밀번호 확인</label>
+            <input type="password" id="pw-check" placeholder="비밀번호 확인" /><br />
+            <label for="username">이름</label>
+            <input type="text" id="username" placeholder="이름" /><br />
+            <fieldset>
+                <legend>성별</legend>
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male">남자</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">여자</label>
+                <input type="radio" id="other-gender" name="gender" value="other-gender" />
+                <label for="other-gender">그 외</label>
+            </fieldset>
+            <br />
+            <fieldset>
+                <legend>선호하는 음식</legend>
+                <input type="checkbox" name="food" id="korean-food" value="korean-food" />
+                <label for="korean-food">한식</label>
+                <input type="checkbox" name="food" id="japanese-food" value="japanese-food" />
+                <label for="japanese-food">일식</label>
+                <input type="checkbox" name="food" id="chinese-food" value="chinese-food" />
+                <label for="chinese-food">중식</label>
+                <input type="checkbox" name="food" id="italy-food" value="italy-food" />
+                <label for="italy-food">이태리음식</label>
+                <input type="checkbox" name="food" id="america-food" value="america-food" />
+                <label for="america-food">아메리칸음식</label>
+            </fieldset>
+            <br />
+            <button type="button" onclick="ajaxGetSignUp()">ajax get 회원가입</button>
+            <button type="button" onclick="ajaxPostSignUp()">ajax post 회원가입</button>
+        </form>
+        <div class="result"></div>
+        <script>
+            function ajaxGetSignUp() {
+                const result = document.querySelector('.result');
+                result.style.color = 'black';
+                result.textContent = '';
+
+                const form = document.forms['sign-up-form'];
+                console.log(form);
+                const userid = document.getElementById('id').value;
+                const userPw = document.getElementById('pw').value;
+                const userPwCheck = document.getElementById('pw-check').value;
+
+                if (userid === '' || userPw === '' || userPwCheck === '') {
+                    result.style.color = 'red';
+                    result.textContent = '아이디 또는 비밀번호를 입력하세요';
+                    return;
+                }
+                if (userPw !== userPwCheck) {
+                    result.style.color = 'red';
+                    result.textContent = '비밀번호와 비밀번호 확인이 일치하지 않습니다';
+                    return;
+                }
+
+                const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+
+                const favoriateFood = [];
+                checked.forEach((element) => {
+                    favoriateFood.push(element.value);
+                });
+                console.log(favoriateFood);
+                const data = {
+                    userId: userid,
+                    userPw: userPw,
+                    userPwCheck: userPwCheck,
+                    userGender: form.gender.value,
+                    userFavFood: favoriateFood,
+                };
+                $.ajax({
+                    url: '/signUp',
+                    type: 'get',
+                    data,
+                    success: function (res) {
+                        console.log(res);
+                        result.style.color = 'black';
+                        result.textContent = `${res.userId}님 가입을 환영합니다.`;
+                    },
+                });
+            }
+            function ajaxPostSignUp() {
+                const result = document.querySelector('.result');
+                result.style.color = 'black';
+                result.textContent = '';
+
+                const form = document.forms['sign-up-form'];
+                console.log(form);
+                const userid = document.getElementById('id').value;
+                const userPw = document.getElementById('pw').value;
+                const userPwCheck = document.getElementById('pw-check').value;
+
+                if (userid === '' || userPw === '' || userPwCheck === '') {
+                    result.style.color = 'red';
+                    result.textContent = '아이디 또는 비밀번호를 입력하세요';
+                    return;
+                }
+                if (userPw !== userPwCheck) {
+                    result.style.color = 'red';
+                    result.textContent = '비밀번호와 비밀번호 확인이 일치하지 않습니다';
+                    return;
+                }
+
+                const checked = document.querySelectorAll('input[type="checkbox"]:checked');
+
+                const favoriateFood = [];
+                checked.forEach((element) => {
+                    favoriateFood.push(element.value);
+                });
+                console.log(favoriateFood);
+                const data = {
+                    userId: userid,
+                    userPw: userPw,
+                    userPwCheck: userPwCheck,
+                    userGender: form.gender.value,
+                    userFavFood: favoriateFood,
+                };
+                $.ajax({
+                    url: '/signUp',
+                    type: 'post',
+                    data,
+                    success: function (res) {
+                        console.log(res);
+                        result.style.color = 'black';
+                        result.textContent = `${res.userId}님 가입을 환영합니다.`;
+                    },
+                });
+            }
+        </script>
+    </body>
+</html>

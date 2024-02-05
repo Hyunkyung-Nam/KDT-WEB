@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <form onsubmit="loginGetFunc(event)">
+            <input type="text" placeholder="아이디" id="id" /><br />
+            <input type="password" name="pw" id="pw" placeholder="비밀번호" /><br />
+            <button type="submit">fetch get 로그인</button>
+            <button type="button" onclick="loginPostFunc()">fetch post 로그인</button>
+        </form>
+        <br />
+        <div class="result"></div>
+        <script>
+            const form = document.querySelector('form');
+            const result = document.querySelector('.result');
+
+            function loginGetFunc(event) {
+                event.preventDefault();
+                const data = {
+                    userid: form.id.value,
+                    userpw: form.pw.value,
+                };
+                const urlQuery = `?userid=${data.userid}&userpw=${data.userpw}`;
+                fetch(`/login${urlQuery}`, {
+                    method: 'get',
+                })
+                    .then((res) => {
+                        return res.json();
+                    })
+                    .then((data) => {
+                        console.log(data);
+                        data.status
+                            ? (result.textContent = `로그인에 성공하였습니다.`)
+                            : (result.textContent = `아이디 또는 비밀번호를 확인해주세요`);
+                    });
+            }
+            async function loginPostFunc() {
+                const data = {
+                    userid: form.id.value,
+                    userpw: form.pw.value,
+                };
+                fetch('/login', {
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                })
+                    .then((res) => {
+                        return res.json();
+                    })
+                    .then((data) => {
+                        data.status
+                            ? (result.textContent = `로그인에 성공하였습니다.`)
+                            : (result.textContent = `아이디 또는 비밀번호를 확인해주세요`);
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                    });
+            }
+
+            /*
+                        function loginGetFunc(event) {
+                            event.preventDefault();
+                            const data = {
+                                userid: form.id.value,
+                                userpw: form.pw.value,
+                            };
+
+                            axios({
+                                method: 'get',
+                                url: '/login',
+                                params: data,
+                            }).then((res) => {
+                                console.log(res.data.status);
+                                res.data.status
+                                    ? (result.textContent = `로그인에 성공하였습니다.`)
+                                    : (result.textContent = `아이디 또는 비밀번호를 확인해주세요`);
+                            });
+                        }
+                        async function loginPostFunc() {
+                            const data = {
+                                userid: form.id.value,
+                                userpw: form.pw.value,
+                            };
+                            console.log(data);
+                            try {
+                                let res = await axios({
+                                    method: 'post',
+                                    url: '/login',
+                                    data,
+                                });
+                                res.data.status
+                                    ? (result.textContent = `로그인에 성공하였습니다.`)
+                                    : (result.textContent = `아이디 또는 비밀번호를 확인해주세요`);
+                            } catch (error) {}
+                        }
+                        */
+        </script>
+    </body>
+</html>
