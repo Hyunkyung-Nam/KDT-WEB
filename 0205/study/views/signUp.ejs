@@ -52,27 +52,23 @@
                         url: '/dyanmicDataUpload',
                         data: data,
                     });
-
-                    // console.log();
-
-                    try {
-                        let fileRes = await axios({
-                            method: 'post',
-                            url: '/dynamicFileUpload',
-                            data: formData,
-                            headers: {
-                                'Content-Type': 'multipart/form-data',
-                            },
-                        });
-                        console.log('hello');
-                        console.log(fileRes);
-                        console.log(dataRes.data.id);
-                        userImg.src = fileRes.data.path;
-                        reusltId.textContent = `${dataRes.data.id}님 환영합니다!`;
-                        resultPw.textContent = `비밀번호 : ${dataRes.data.pw}`;
-                        reusltUsername.textContent = `이름 : ${dataRes.data.username}`;
-                        resultAge.textContent = `나이 : ${dataRes.data.age}`;
-                    } catch (error) {}
+                    let fileRes = await axios({
+                        method: 'post',
+                        url: '/dynamicFileUpload',
+                        data: formData,
+                        headers: {
+                            'Content-Type': 'multipart/form-data',
+                        },
+                    });
+                    //try catch안에 여러번 넣을 필요없음 한번만 넣으면된다.
+                    console.log('hello');
+                    console.log(fileRes);
+                    console.log(dataRes.data.id);
+                    userImg.src = fileRes.data.path;
+                    reusltId.textContent = `${dataRes.data.id}님 환영합니다!`;
+                    resultPw.textContent = `비밀번호 : ${dataRes.data.pw}`;
+                    reusltUsername.textContent = `이름 : ${dataRes.data.username}`;
+                    resultAge.textContent = `나이 : ${dataRes.data.age}`;
                 } catch (error) {}
             }
         </script>
