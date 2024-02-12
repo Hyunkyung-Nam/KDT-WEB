@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>USER INFO</h1>
+        <form name="userinfo-form">
+            <div class="id" hidden><%= params.id%></div>
+            <label for="userid">아이디</label>
+            <input type="text" id="userid" maxlength="20" minlength="2" readonly /><br />
+            <label for="userpw">비밀번호</label>
+            <input type="password" id="userpw" maxlength="20" minlength="2" /><br />
+            <label for="username">이름</label>
+            <input type="text" id="username" />
+            <br />
+            <br />
+            <button type="button" onclick="userDataUpdate()">회원정보 수정</button>
+            <button type="button" onclick="userDataDelete()">회원 탈퇴</button>
+        </form>
+        <div class="result"></div>
+        <script>
+            //페이지 열리자마자 userinfo 가져오기
+
+            (async function () {
+                const id = document.querySelector('.id').textContent;
+                const res = await axios({
+                    method: 'post',
+                    url: '/user/getUserInfo',
+                    data: {
+                        id,
+                    },
+                });
+                const useridForm = document.querySelector('#userid');
+                const userpwForm = document.querySelector('#userpw');
+                const usernameForm = document.querySelector('#username');
+                const { userid, name } = res.data.userInfo[0];
+                console.log(useridForm);
+                useridForm.value = userid;
+                userpwForm.value = '';
+                usernameForm.value = name;
+            })();
+            async function userDataUpdate() {
+                const form = document.forms['userinfo-form'];
+                const data = {
+                    id: document.querySelector('.id').textContent,
+                    userid: form.userid.value,
+                    userpw: form.userpw.value,
+                    username: form.username.value,
+                };
+                await axios({
+                    method: 'patch',
+                    url: '/user/updateInfo',
+                    data,
+                });
+                console.log('수정');
+                alert('회원정보가 수정되었습니다.');
+                location.reload();
+            }
+            async function userDataDelete() {
+                if (!confirm('회원탈퇴하시겠습니까?')) {
+                    console.log('취소');
+                    return;
+                }
+                await axios({
+                    method: 'delete',
+                    url: '/user/deleteUser',
+                    data: {
+                        id: document.querySelector('.id').textContent,
+                    },
+                });
+                console.log('탈퇴');
+                alert('정상적으로 탈퇴되었습니다');
+                location.reload();
+            }
+        </script>
+    </body>
+</html>
