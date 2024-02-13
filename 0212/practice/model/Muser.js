@@ -44,7 +44,6 @@ const updateInfo = async (data) => {
 
 const deleteUser = async (id) => {
     const conn = await getConn();
-    console.log('dddddddddidddd', id);
     const query = 'DELETE FROM user WHERE id=?';
     const [result] = await conn.query(query, [Number(id)]);
     await conn.end();
