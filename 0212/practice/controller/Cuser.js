@@ -44,13 +44,6 @@ exports.updateInfo = async (req, res) => {
     res.send(result);
 };
 
-exports.getUserInfo = async (req, res) => {
-    console.log('getUserInfo : ', req.body);
-    let rows = await user.getUserInfo(req.body.id);
-    console.log(rows);
-    res.send({ userInfo: rows });
-};
-
 exports.deleteUser = async (req, res) => {
     let result = await user.deleteUser(req.body.id);
     console.log(result);
