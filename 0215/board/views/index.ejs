@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../public/css/index.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <%- include('header.ejs')%>
+        <main>
+            <h1>메인페이지</h1>
+            <div>
+                <button type="button" onclick="goBoard()">게시판</button>
+            </div>
+        </main>
+        <script>
+            (function () {
+                const id = localStorage.getItem('login');
+                if (id === null) {
+                    document.querySelector('.signup').classList.remove('hidden');
+                    document.querySelector('.login').textContent = '로그인';
+                } else {
+                    console.log('아이디값존재');
+                    document.querySelector('.signup').classList.add('hidden');
+                    document.querySelector('.login').textContent = '로그아웃';
+                }
+            })();
+            function signup() {
+                document.location.href = '/signup';
+            }
+            function logInOut() {
+                const status = document.querySelector('.login').textContent;
+                if (status == '로그인') {
+                    document.location.href = '/login';
+                } else {
+                    localStorage.clear();
+                    document.location.reload();
+                }
+            }
+            function goBoard() {
+                const id = localStorage.getItem('login');
+                if (id !== '') {
+                    document.location.href = '/post';
+                } else {
+                    document.location.href = '/login';
+                }
+            }
+        </script>
+    </body>
+</html>

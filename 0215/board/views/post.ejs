@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="../public/css/post.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <%- include('header.ejs') %>
+        <main>
+            <h1>KDT11기 게시판</h1>
+            <div>
+                <button type="button" onclick="writeFunc()" class="writeBtn">글쓰기</button>
+            </div>
+            <table border="1" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>제목</th>
+                        <th>날짜</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </main>
+
+        <script>
+            const tbody = document.querySelector('tbody');
+            (async function () {
+                const id = localStorage.getItem('login');
+                if (id === null) {
+                    document.querySelector('.signup').classList.remove('hidden');
+                    document.querySelector('.login').textContent = '로그인';
+                    document.querySelector('.writeBtn').classList.add('hidden');
+                } else {
+                    console.log('아이디값존재');
+                    document.querySelector('.writeBtn').classList.remove('hidden');
+                    document.querySelector('.signup').classList.add('hidden');
+                    document.querySelector('.login').textContent = '로그아웃';
+                    const html = `
+                        <button type=button onclick=profileFunc()>내정보조회</button>
+                    `;
+                    document.querySelector('.login').insertAdjacentHTML('beforebegin', html);
+                }
+
+                const res = await axios({
+                    method: 'GET',
+                    url: '/api/post/all',
+                });
+                console.log(res.data.data);
+                for (let i = 0; i < res.data.data.length; i++) {
+                    const html = `
+                        <tr>
+                            <td>${res.data.data[i].id}</td>
+                            <td><a href=/post/${res.data.data[i].id} >${res.data.data[i].title}</a></td>
+                            <td>${res.data.data[i].createdAt}</td>
+                        </tr>
+                    `;
+                    tbody.insertAdjacentHTML('beforeend', html);
+                }
+            })();
+            function signup() {
+                document.location.href = '/signup';
+            }
+            function logInOut() {
+                const status = document.querySelector('.login').textContent;
+                if (status == '로그인') {
+                    document.location.href = '/login';
+                } else {
+                    localStorage.clear();
+                    document.location.reload();
+                }
+            }
+            function profileFunc() {
+                document.location.href = '/profile';
+            }
+            function writeFunc() {
+                //그냥 write로 하면 이미 함수가 있는지 적용이 안된다
+                document.location.href = '/write';
+            }
+        </script>
+    </body>
+</html>

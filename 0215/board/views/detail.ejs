@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../public/css/detail.css" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>게시글 상세 페이지</h1>
+        <a href="/post"><--이전페이지</a><br />
+        <form name="post-form">
+            <fieldset>
+                <legend>게시글</legend>
+                <input type="text" id="title" placeholder="제목" /><br />
+                <textarea id="content" cols="30" rows="10"></textarea><br />
+                <input type="hidden" id="index" />
+                <button type="button" onclick="updateFunc()" id="updateBtn">수정</button>
+                <button type="button" onclick="deleteFunc()" id="deleteBtn">삭제</button><br />
+            </fieldset>
+
+            <fieldset>
+                <legend>댓글</legend>
+                <input type="text" id="comment" placeholder="추가할 댓글을 적어주세요" />
+                <button type="button" onclick="postCommentFunc()">댓글추가</button><br />
+                <ul></ul>
+            </fieldset>
+        </form>
+        <script>
+            const [_, param] = document.location.href.split('post/');
+            console.log(param);
+            let isWritter = false;
+            (async function () {
+                const res = await axios({
+                    method: 'get',
+                    url: `/api/post/${param}`,
+                });
+                console.log(res);
+                const { memberId, id: postId, title, content, comments } = res.data.data;
+                const form = document.forms['post-form'];
+                const ul = document.querySelector('ul');
+                form.title.value = title;
+                form.content.value = content;
+                form.index.value = postId;
+                if (String(memberId) === String(localStorage.getItem('login'))) {
+                    document.querySelector('#updateBtn').classList.remove('hidden');
+                    document.querySelector('#deleteBtn').classList.remove('hidden');
+                    isWritter = true;
+                } else {
+                    document.querySelector('#updateBtn').classList.add('hidden');
+                    document.querySelector('#deleteBtn').classList.add('hidden');
+                }
+                for (let i = 0; i < comments.length; i++) {
+                    let html;
+                    isWritter
+                        ? (html = `
+                        <li>${comments[i].content} <button type="button" onclick="deleteCommentFunc(${postId})">삭제</button></li>`)
+                        : (html = `
+                        <li>${comments[i].content}</li>`);
+
+                    ul.insertAdjacentHTML('beforeend', html);
+                }
+                console.log('memberId', memberId, 'login', localStorage.getItem('login'));
+            })();
+            async function updateFunc() {
+                const form = document.forms['post-form'];
+                const res = await axios({
+                    method: 'PATCH',
+                    url: '/api/post/update',
+                    data: {
+                        id: form.index.value,
+                        title: form.title.value,
+                        content: form.content.value,
+                    },
+                });
+                if (res.data.result) {
+                    document.location.reload();
+                }
+            }
+            async function deleteFunc() {
+                if (!confirm('정말 삭제하시겠습니까?')) {
+                    return;
+                }
+                let res = await axios({
+                    method: 'delete',
+                    url: '/api/post/delete',
+                    data: {
+                        id: document.querySelector('#index').value,
+                    },
+                });
+                if (res.data.result) {
+                    document.location.href = '/post';
+                }
+            }
+            async function deleteCommentFunc(id) {
+                //코멘트 삭제
+                const res = await axios({
+                    method: 'delete',
+                    url: '/api/post/deleteComment',
+                    data: {
+                        id,
+                    },
+                });
+                if (res.data.result) {
+                    alert('댓글이 삭제되었습니다');
+                    document.location.reload();
+                } else {
+                    alert('댓글삭제에 실패하였습니다.');
+                }
+            }
+            async function postCommentFunc() {
+                const comment = document.querySelector('#comment').value;
+                const res = await axios({
+                    method: 'POST',
+                    url: '/api/post/comment',
+                    data: {
+                        postid: param, //postid
+                        memberid: localStorage.getItem('login'),
+                        content: comment,
+                    },
+                });
+                if (res.data.result) {
+                    document.location.reload();
+                } else {
+                    alert('댓글작성에 실패하였습니다.');
+                }
+            }
+        </script>
+    </body>
+</html>

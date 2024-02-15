@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>로그인</h1>
+        <form name="login-form">
+            <input type="text" id="userid" placeholder="아이디" required /><br />
+            <input type="password" id="userpw" placeholder="비밀번호" required /><br />
+            <button type="button" onclick="loginFunc()">로그인</button>
+        </form>
+        <script>
+            async function loginFunc() {
+                const form = document.forms['login-form'];
+                const res = await axios({
+                    method: 'POST',
+                    url: '/api/member/login',
+                    data: {
+                        userid: form.userid.value,
+                        userpw: form.userpw.value,
+                    },
+                });
+                console.log(res.data);
+                if (res.data.result) {
+                    alert('환영합니다');
+                    //localStrorage : 브라우저에 정보를 저장할 때 사용, 브라우저가 닫혀도 날아가지 않음, 계속유지
+                    //sessionStrorage : 브라우저에 정보를 저장, 단 브라우저가 닫히면 정보가 삭제됨
+                    localStorage.setItem('login', res.data.data.id);
+                    document.location.href = '/post';
+                } else {
+                    alert('아이디 또는 비밀번호를 확인하세요');
+                }
+            }
+        </script>
+    </body>
+</html>
