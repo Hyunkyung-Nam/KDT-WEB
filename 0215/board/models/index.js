@@ -35,12 +35,12 @@ db.Post.hasMany(db.Comment, { foreignKey: 'postId', onDelete: 'CASCADE' });
 db.Comment.belongsTo(db.Post, { foreignKey: 'postId', onDelete: 'CASCADE' });
 
 //유저랑 게시글 1:다 관계
-db.Member.hasMany(db.Comment, { foreignKey: 'memberId', onDelete: 'CASCADE' });
-db.Post.belongsTo(db.Post, { foreignKey: 'memberId', onDelete: 'CASCADE' });
+db.Member.hasMany(db.Post, { foreignKey: 'memberId', onDelete: 'CASCADE' });
+db.Post.belongsTo(db.Member, { foreignKey: 'memberId', onDelete: 'CASCADE' });
 
 //유저랑 댓글 1:다 관계
 db.Member.hasMany(db.Comment, { foreignKey: 'memberId', onDelete: 'CASCADE' });
-db.Comment.belongsTo(db.Post, { foreignKey: 'memberId', onDelete: 'CASCADE' });
+db.Comment.belongsTo(db.Member, { foreignKey: 'memberId', onDelete: 'CASCADE' });
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

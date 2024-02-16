@@ -46,16 +46,16 @@
                 if (String(memberId) === String(localStorage.getItem('login'))) {
                     document.querySelector('#updateBtn').classList.remove('hidden');
                     document.querySelector('#deleteBtn').classList.remove('hidden');
-                    isWritter = true;
                 } else {
                     document.querySelector('#updateBtn').classList.add('hidden');
                     document.querySelector('#deleteBtn').classList.add('hidden');
                 }
                 for (let i = 0; i < comments.length; i++) {
                     let html;
-                    isWritter
+                    console.log(String(comments[i].id) === String(localStorage.getItem('login')));
+                    String(comments[i].memberId) === String(localStorage.getItem('login'))
                         ? (html = `
-                        <li>${comments[i].content} <button type="button" onclick="deleteCommentFunc(${postId})">삭제</button></li>`)
+                        <li>${comments[i].content} <button type="button" onclick="deleteCommentFunc(${comments[i].id})">삭제</button></li>`)
                         : (html = `
                         <li>${comments[i].content}</li>`);
 

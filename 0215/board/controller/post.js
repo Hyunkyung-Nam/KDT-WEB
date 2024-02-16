@@ -28,7 +28,9 @@ exports.write = async (req, res) => {
         const result = await Post.create({ title, content, memberId: memberid });
         console.log('write', result);
         res.json({ result: true, data: { id: result.id } });
-    } catch (error) {}
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 //하나 수정
