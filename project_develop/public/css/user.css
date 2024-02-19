@@ -39,3 +39,7 @@ signup > form {
 signup > form > * {
     margin: 5px;
 }
+
+.hidden {
+    display: none;
+}

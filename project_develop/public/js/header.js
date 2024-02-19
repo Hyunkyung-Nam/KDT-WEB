@@ -14,10 +14,29 @@ window.onload = function () {
     } else if (location === 'community') {
         document.querySelectorAll('a')[5].classList.add('seledted');
     }
+    const token = localStorage.getItem('token');
+    if (token) {
+        document.querySelector('button').classList.add('login');
+        document.querySelector('button').textContent = '로그아웃';
+        document.querySelectorAll('a')[6].classList.add('hidden');
+    } else {
+        document.querySelector('button').classList.add('login');
+        document.querySelector('button').textContent = '로그인';
+        document.querySelectorAll('a')[6].classList.remove('hidden');
+    }
 };
 
 function resetNav() {
     for (let i = 1; i < 6; i++) {
         document.querySelectorAll('a')[i].classList.remove('seledted');
+    }
+}
+
+function loginout() {
+    if (document.querySelector('button').textContent === '로그인') {
+        document.location.href = '/user/login';
+    } else {
+        localStorage.clear();
+        document.location.href = '/';
     }
 }

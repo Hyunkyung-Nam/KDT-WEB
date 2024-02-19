@@ -118,3 +118,13 @@ header {
 .user > * :hover {
     font-weight: bold;
 }
+
+#login {
+    border: 0;
+    background-color: unset;
+    font-size: 15px;
+    color: black;
+}
+.hidden {
+    display: none;
+}
