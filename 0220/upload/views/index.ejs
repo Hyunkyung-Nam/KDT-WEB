@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>파일업로드 AWS</h1>
+        <!-- <form enctype="multipart/form-data">
+            <input type="file" id="files" multiple /><br />
+            <button type="button" onclick="upload()">업로드</button>
+        </form>
+        <br /> -->
+        <form onsubmit="upload1(event)">
+            <input type="file" id="files" multiple /><br />
+            <button type="submit" onclick="upload1()">업로드</button>
+        </form>
+        <br />
+        <div class="result"></div>
+        <script>
+            const resultBox = document.querySelector('.result');
+            async function upload1(e) {
+                e.preventDefault();
+                console.log('ddd');
+                //파일에 접근
+                const file = document.querySelector('#files');
+                console.log(file.files);
+
+                //폼데이터
+                const formData = new FormData();
+                //파일이 여러개이므로 반복문을 사용
+                for (let i = 0; i < file.files.length; i++) {
+                    formData.append('files', file.files[i]);
+                }
+
+                const res = await axios({
+                    method: 'POST',
+                    url: '/upload',
+                    headers: {
+                        'Content-Type': 'multipart/form-data',
+                    },
+                    data: formData,
+                });
+                console.log('res', res);
+                res.data.forEach((value) => {
+                    const img = document.createElement('img');
+                    img.src = value.location; //aws는 location에 담겨있다
+                    img.style.width = '300px';
+                    resultBox.append(img);
+                });
+            }
+        </script>
+    </body>
+</html>
