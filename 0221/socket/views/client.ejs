@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="/socket.io/socket.io.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Socket.Io</h1>
+        <ul></ul>
+        <form id="chat">
+            <input type="text" id="user" placeholder="사용자명" />
+            <input type="text" id="message" placeholder="채팅내용" />
+            <button>전송</button>
+        </form>
+        <script>
+            const socket = io();
+            const chatForm = document.querySelector('#chat');
+            const ul = document.querySelector('ul');
+            //이벤트 생성
+            //원하는 데이터 아무렇게나 보내도된다 socketio가 알아서 처리해줌
+            socket.emit('open_message', '접속되었습니다.', 'ㅎㅎㅎ', { hi: 'hello' }, (res, res2, res3) => {
+                console.log(res, res2, res3);
+            });
+            socket.on('backend_message', (arg) => {
+                const li = document.createElement('li');
+                li.textContent = `${arg.user}님 ${arg.message}`;
+                ul.appendChild(li);
+            });
+            //폼이벤트
+            chatForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const user = chatForm.querySelector('#user').value;
+                const message = chatForm.querySelector('#message').value;
+                //이벤트 기반, 이벤트 명이 첫번째
+                socket.emit('form_message', { user, message }, (res) => {});
+                message.value = '';
+            });
+        </script>
+    </body>
+</html>

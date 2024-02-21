@@ -3,3 +3,4 @@ package-lock.json
 *.env
 *.git
 config.json
+.DS_Store
