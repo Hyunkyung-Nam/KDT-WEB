@@ -13,14 +13,15 @@ function FunctionComponenet({ name, time, children }) {
 }
 
 FunctionComponenet.defaultProps = {
-    name: '홍길동',
+    //     name: '홍길동',
     time: '벌써 12시',
-    children: '자식',
+    //     children: '자식',
 };
 
 FunctionComponenet.propTypes = {
-    name: PropTypes.string,
-    // time: '벌써 12시',
-    children: PropTypes.string,
+    //isRequired 는 default 없을 때 작동
+    name: PropTypes.string.isRequired,
+    // time: PropTypes.number,
+    // children: PropTypes.string,
 };
 export default FunctionComponenet;
