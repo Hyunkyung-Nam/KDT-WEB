@@ -1,0 +1,7 @@
+//css파일로 변환될 필요가없음을 의미
+
+// - 믹스인(함수) 선언(정의)
+@mixin box($size) {
+    width: $size;
+    height: $size;
+}

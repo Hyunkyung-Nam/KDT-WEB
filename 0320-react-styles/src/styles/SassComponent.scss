@@ -1,0 +1,45 @@
+//SASS styling
+@import './variables.scss';
+@import './utils.scss';
+
+// - 중첩 : 부모 자식 관계 표현
+.container {
+    display: flex;
+
+    .box {
+        //mixin 호출
+        @include box(150px);
+
+        //동등한 의미표현하려면 &붙이면된다
+        //& : 부모 선택자를 참조하여 치환
+        &.red {
+            //&.red => .box.red
+            background-color: $color-red;
+        }
+        &.orange {
+            background-color: $color-orange;
+        }
+        &.yellow {
+            background-color: $color-yellow;
+        }
+        &:hover {
+            //박스에 호버기능
+            // - 연산 가능
+            $box-animation: $animation-duration * 2;
+            transform: translateY(-20px);
+            transition: transform $box-animation;
+        }
+    }
+}
+
+.btn {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+.btn-primary {
+    // - 확장 : 기존 선택자 스타일을 다른 선택자에게 상속
+    @extend .btn;
+    background-color: pink;
+}

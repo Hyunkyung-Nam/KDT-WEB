@@ -1,0 +1,50 @@
+$color-pink: pink;
+$color-yellow: yellow;
+$color-green: green;
+
+@mixin circle($range) {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: relative;
+
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-timing-function: ease;
+    animation-iteration-count: 6;
+    @keyframes rotate {
+        0% {
+            top: 0;
+            left: 0;
+        }
+        25% {
+            top: 0;
+            left: $range;
+        }
+        50% {
+            top: $range;
+            left: $range;
+        }
+        75% {
+            top: $range;
+            left: 0;
+        }
+        100% {
+            top: 0;
+            left: 0;
+        }
+    }
+}
+
+.pink {
+    @include circle(10px);
+    background-color: $color-pink;
+}
+.yellow {
+    @include circle(20px);
+    background-color: $color-yellow;
+}
+.green {
+    @include circle(30px);
+    background-color: $color-green;
+}
