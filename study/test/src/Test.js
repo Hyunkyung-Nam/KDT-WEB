@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from 'axios';
+import { ComponentDefault } from './ComponentDefault';
+
 export default function Test() {
     async function hello() {
         const res = await axios.get(
@@ -15,5 +17,5 @@ export default function Test() {
     }
     hello();
     console.log('zzzzzzz');
-    return <div>Test</div>;
+    return <div></div>;
 }
