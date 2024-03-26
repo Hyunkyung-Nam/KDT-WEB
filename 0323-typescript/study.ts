@@ -125,6 +125,88 @@ type Person = {
 };
 
 let daniel: Person = {
-    name: 'daniel',
+    name: '양갱',
     gender: 'F',
+};
+
+let age: string | number;
+
+type Common = {
+    name: string;
+    age: number;
+    gender: string;
+};
+
+type Animal = {
+    howl: string;
+};
+
+type Cat = Common & Animal;
+type Dog = Common | Animal;
+
+let dog: Dog = {
+    howl: '멍멍멍',
+};
+let cat: Cat = {
+    age: 1,
+    gender: 'F',
+    name: '나비',
+    howl: '이야아아아아아아옹',
+};
+
+interface HumanInterface {
+    name: string;
+    age: number;
+}
+type HumanType = {
+    name: string;
+    age: number;
+};
+
+let human1: HumanInterface = {
+    name: '사람1',
+    age: 20,
+};
+let human2: HumanType = {
+    name: '사람2',
+    age: 20,
+};
+
+function data<T>(arr: T[]) {
+    return arr.length;
+}
+console.log(data<number>([1, 2, 3]));
+console.log(data<string>(['a', 'b', 'c']));
+
+function print<T, U>(x: T, y: U) {
+    console.log(x, y);
+}
+print<string, number>('HIHI', 1234);
+
+interface Product<T> {
+    company: string;
+    createdAt: Date;
+    option: T;
+}
+
+type phoneOption = {
+    size: string;
+};
+type noteBookOption = {
+    inch: number;
+};
+
+const iphone: Product<phoneOption> = {
+    company: 'apple',
+    createdAt: new Date('2024-03-23'),
+    option: {
+        size: 'pro',
+    },
+};
+const macBook: Product<noteBookOption> = {
+    company: 'apple',
+    createdAt: new Date('2024-03-23'),
+    option: {
+        inch: 13,
+    },
 };
